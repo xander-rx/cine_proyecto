@@ -1,0 +1,94 @@
+.login-form{
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #722F37;
+    color: #f9f9f9 
+}
+
+.login-header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    background-color: #722F37; 
+    padding: 20px;
+    color: white;
+}
+
+.login-header .logo {
+    width: 100px; /* tamaño del logo */
+    margin-right: 15px; /* espacio entre logo y texto */
+}
+
+.login-header .titulo {
+    font-size: 28px;
+    margin: 0;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 5px;
+    background-color: #fff 
+    color: #722F37;;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #800000;
+    color: #fff ; 
+}
+
+.registro-link{
+    margin-top: 15px;
+}
+
+.registro-link a {
+    color: #800000; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #722F37; /* negro elegante */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    color: #fff8f8;
+}
+
+.footer-links a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: red;
+}
+
+.footer-contacto p {
+    margin: 5px 0;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-social a:hover {
+    color: red;
+}
+
+
