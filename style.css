@@ -1,5 +1,5 @@
 .login-form{
-    max-width: 300px;
+    max-width: 350px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -18,8 +18,8 @@
 }
 
 .login-header .logo {
-    width: 100px; /* tamaño del logo */
-    margin-right: 15px; /* espacio entre logo y texto */
+    width: 100px; 
+    margin-right: 15px; 
 }
 
 .login-header .titulo {
@@ -46,6 +46,7 @@
 
 .registro-link{
     margin-top: 15px;
+    text-align: center;
 }
 
 .registro-link a {
@@ -90,5 +91,6 @@
 .footer-social a:hover {
     color: red;
 }
+
 
 
