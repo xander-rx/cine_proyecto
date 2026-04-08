@@ -49,7 +49,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 30 px;
+    padding: 12px 30px;
     border-bottom: 1px solid #2b2f3a;
     font-family:'Courier New', Courier, monospace;
 }
@@ -99,7 +99,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 /* Letras cuando selecciona(nav)*/
 
 .nav a:hover{
-    color: #172752;
+    color: #ffb3b3;
 }
 
 /* Div general de los Logos de accion*/
@@ -199,7 +199,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #722F37;
-    color: #f9f9f9 
+    color: #f9f9f9;
 }
 
 .header-simple {
@@ -230,7 +230,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 .btn-login {
     width: 100%;
     padding: 5px;
-    background-color: #fff 
+    background-color: #fff; 
     color: #722F37;;
     font-size: 16px;
     font-weight: bold;
