@@ -104,7 +104,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     display: block;
 }
 
-/*footer del index.html*/
+/*footer GENERAL*/
 
 .footer_index{
     background: linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);
@@ -175,6 +175,8 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 
 /* Css register y logger */
+
+/*  header opcion*/
 .login-form{
     max-width: 350px;
     margin: 50px auto;
@@ -185,24 +187,30 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     color: #f9f9f9 
 }
 
-.login-header {
+.header-simple {
+    background: linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);
+    padding: 15px 30px;
     display: flex;
-    justify-content: center; 
-    align-items: center;     
-    background-color: #722F37; 
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-simple .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
     color: white;
 }
 
-.login-header .logo {
-    width: 100px; 
-    margin-right: 15px; 
+.header-simple img {
+    width: 100px;
 }
 
-.login-header .titulo {
-    font-size: 28px;
-    margin: 0;
+.header-simple h1 {
+    font-size: 24px;
 }
+
 
 .btn-login {
     width: 100%;
@@ -232,42 +240,6 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     text-decoration: none;
 }
 
-.footer {
-    background-color: #722F37; /* negro elegante */
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 0px;
-}
-
-.footer h3 {
-    margin-bottom: 10px;
-    color: #fff8f8;
-}
-
-.footer-links a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    color: red;
-}
-
-.footer-contacto p {
-    margin: 5px 0;
-}
-
-.footer-social a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-.footer-social a:hover {
-    color: red;
-}
 
 
 
