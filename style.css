@@ -1,4 +1,19 @@
 
+
+/* Response */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 /*Css index */
 
 *{
@@ -17,7 +32,7 @@ body{
     padding: 0;
     display: flex;
     flex-direction: column;
-
+    background: #cfcfd1;
 }
 main{
     flex: 1;
