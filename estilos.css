@@ -6,13 +6,13 @@ body{
 }
 
 header{
-    background-color:red;
+    background:linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);
     padding:20px;
     text-align:center;
 }
 
 h1{
-    color:black;
+    color:#FCFCFC ;
 }
 
 .catalogo{
@@ -73,10 +73,70 @@ font-weight:bold;
 cursor:pointer;
 }
 
-footer{
-background-color:#000;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:30px;
+.footer_index{
+    background: linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);
+    color: white;
+    padding: 35px 30px 15px;
+    margin-top: 40px;
 }
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 220px;
+}
+
+.footer_index h3,
+.footer_index h4 {
+    margin-bottom: 10px;
+    color: #ffe5e5;
+    font-size: 20px ;
+}
+
+.footer_index p,
+.footer_index a {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.footer_index p {
+    margin: 0;
+    color: #f3eaea;
+}
+
+.footer_index a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.footer_index a:hover{
+    color: #ffb3b3;
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+.footer-bottom p{
+    margin: 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
