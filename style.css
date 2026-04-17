@@ -77,7 +77,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: auto;
+    padding: 60px 20px;
+    flex:1
 }
 
 /*CSS Header (flexbox) 
@@ -94,6 +96,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     padding: 12px 30px;
     border-bottom: 1px solid #2b2f3a;
     font-family:'Courier New', Courier, monospace;
+
 }
 
 /* (logo)*/
@@ -233,12 +236,11 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* ===== FORMULARIOS LOGIN Y REGISTRO ===== */
 .login-form {
-    width: 100%;
-    max-width: 420px; 
+    max-width: 480px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
-    background-color: #fff; 
+    background-color: #fff;
     color: #333;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
