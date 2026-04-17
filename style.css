@@ -2,39 +2,76 @@
 
 /* Response */
 @media (max-width: 768px) {
+    /* Header en columna en movil */
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Hero mas compacto */
+    .hero h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    /* Footer en columna */
     .footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .header {
-        flex-direction: column;
-        gap: 10px;
+    /* Secciones con scroll horizontal en tablas */
+    .sedes, .dulceria {
+        padding: 20px 15px;
+    }
+
+    .tabla-sedes, .tabla-menu {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Login centrado con margen */
+    .login-form {
+        margin: 30px 20px;
+    }
+
+    /* Catalogo de peliculas */
+    .catalogo {
+        padding: 15px;
+        gap: 15px;
     }
 }
 
 /*Css index */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html, body {
     height: 100%;
-    margin: 0;
 }
 
-body{
-    margin: 0;
-    padding: 0;
+/* BODY - Diseño base oscuro (tema cine) */
+body {
     display: flex;
     flex-direction: column;
-    background: #cfcfd1;
+    background-color: #0f0f0f;
+    color: #f0f0f0;
+    font-family: Georgia, 'Times New Roman', serif;
 }
-main{
+
+main {
     flex: 1;
 }
 
@@ -259,8 +296,167 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     css de la seccion hero
 */
 
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0508 40%, #2d0e14 100%);
+    padding: 90px 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(114, 47, 55, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero h2 {
+    font-size: 46px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #ccb8b8;
+    max-width: 550px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* boton del hero */
+
+.hero-botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.btn-cartelera {
+    background-color: #722F37;
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid #722F37;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-cartelera:hover {
+    background-color: #8f3a45;
+    border-color: #8f3a45;
+    transform: translateY(-2px);
+}
+
+/*
+    css del peliculas (se usa en index tmb)
+*/
 
 
+.seccion-titulo {
+    text-align: center;
+    padding: 40px 30px 20px;
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.seccion-titulo span {
+    color: #c9818a;
+}
+
+.seccion-subtitulo {
+    text-align: center;
+    color: #888;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
 
 
+/* Css de peliculas */
 
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px 40px 40px;
+}
+
+/* Tarjeta individual de pelicula */
+
+.pelicula {
+    background-color: #1a1a1a;
+    width: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #262626;
+}
+
+/* Imagen del poster */
+
+.pelicula img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Titulo de la pelicula */
+
+.pelicula h3 {
+    margin: 10px 0 5px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 0 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Descripcion breve */
+
+.pelicula p {
+    font-size: 13px;
+    padding: 0 10px 12px;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Etiqueta de genero */
+
+.pelicula .genero {
+    display: inline-block;
+    background-color: #722F37;
+    color: white;
+    font-size: 11px;
+    padding: 3px 9px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+}
+
+/* Efecto hover de la tarjeta */
+
+.pelicula:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 22px rgba(114, 47, 55, 0.6);
+}

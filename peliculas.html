@@ -1,84 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Catálogo de Películas</title>
-<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas - CinePlus</title>
+    <link rel="icon" href="images/icon_cineplus.png">
+    <!--
+        Se corrige la ruta del CSS: antes usaba css/estilos.css (ruta incorrecta)
+        Ahora apunta directamente a style.css en la raiz del proyecto
+    -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-<nav>
-    <ul>
-        <li>Inicio</li>
-        <li>Películas</li>
-        <li>Estrenos</li>
-        <li>Contacto</li>
-    </ul>
-</nav>
+    <!--
+        Header igual al de index.html
+        Divido en clases para poder trabajar el style.css
+        header_logos -> Se usa para el logo y letras de la pagina
+        Se crea un nav que redirecciona a otras paginas
+    -->
+    <header class="header">
+        <a href="index.html" class="logo-link">
+            <div class="header_logo">
+                <img src="images/icon_cineplus.png" alt="Logo CinePlus">
+            </div>
+            <div>
+                <h1 class="header_title">CinePlus</h1>
+            </div>
+        </a>
 
-<header>
-    <h1>Catálogo de Películas</h1>
-</header>
-
-<section class="catalogo">
-
-    <div class="pelicula">
-        <img src="imagen/avatar.png" alt=""/>
-        <h3>Avatar</h3>
-        <p>Película de ciencia ficción y aventura.</p>
-    </div>
-
-    <div class="pelicula">
-        <img src="imagen/spiderman.png" alt=""/>
-        <h3>Spiderman</h3>
-        <p>Película de acción y superhéroes.</p>
-    </div>
-
-    <div class="pelicula">
-       
-        <img src="imagen/frozen.png" alt=""/>
-        <h3>Frozen</h3>
-        <p>Película animada de Disney.</p>
-    </div>
-
-    <div class="pelicula">
-        <img src="imagen/jurassic.png" alt=""/>
-        <h3>Jurassic World</h3>
-        <p>Película de aventura con dinosaurios.</p>
-    </div>
-
-</section>
-
-<footer class="footer_index">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>CinePlus</h3>
-            <p>Tu experiencia de cine favorita</p>
+        <!--
+            Apartado del header que se usara para navegar entre paginas <nav>
+        -->
+        <div>
+            <nav class="nav">
+                <a href="peliculas.html">Películas</a>
+                <a href="cines.html">Cines</a>
+                <a href="promociones.html">Promociones</a>
+                <a href="dulceria.html">Dulcería</a>
+            </nav>
         </div>
 
+        <!--
+            Apartado de Buscar y Loguear/Registrarse
+        -->
+        <div class="header_acciones">
+            <a href="login.html" class="icon_usuario">
+                <img src="images/Imagen1.png" alt="Usuario">
+            </a>
+            <a href="buscador.html" class="icon_buscador">
+                <img src="images/buscador.png" alt="Buscar">
+            </a>
+        </div>
+    </header>
 
-        <div class="footer-col">
-            <h4>Contacto</h4>
-            <p>📞 (01) 123 4567</p>
-            <p>✉️ contacto@cineplus.com</p>
+    <main>
+
+        <!--
+            Titulo de la seccion de peliculas
+        -->
+        <h2 class="seccion-titulo">Cartelera <span>de Películas</span></h2>
+        <p class="seccion-subtitulo">Todas las películas disponibles en CinePlus</p>
+
+        <!--
+            Catalogo de peliculas: grid de tarjetas
+            Cada tarjeta tiene: poster, genero, titulo y descripcion
+            NOTA: Se corrige la ruta de las imagenes
+                  Antes: imagen/avatar.png (incorrecto)
+                  Ahora: images/avatar.png (correcto)
+        -->
+        <section class="catalogo">
+
+            <div class="pelicula">
+                <img src="images/avatar.png" alt="Avatar">
+                <span class="genero">Ciencia Ficción</span>
+                <h3>Avatar</h3>
+                <p>Un exmarine viaja al planeta Pandora en una misión única de exploración.</p>
+            </div>
+
+            <div class="pelicula">
+                <img src="images/spiderman.png" alt="Spiderman">
+                <span class="genero">Acción</span>
+                <h3>Spider-Man</h3>
+                <p>El joven Peter Parker protege Nueva York con sus poderes de araña.</p>
+            </div>
+
+            <div class="pelicula">
+                <img src="images/frozen.png" alt="Frozen">
+                <span class="genero">Animación</span>
+                <h3>Frozen</h3>
+                <p>La princesa Elsa controla la magia del hielo en el reino de Arendelle.</p>
+            </div>
+
+            <div class="pelicula">
+                <img src="images/jurassic.png" alt="Jurassic World">
+                <span class="genero">Aventura</span>
+                <h3>Jurassic World</h3>
+                <p>Los dinosaurios son recreados en un espectacular parque temático.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--
+        Footer igual al de index.html
+        Dividido en: descripcion, contacto y redes sociales
+    -->
+    <footer class="footer_index">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>CinePlus</h3>
+                <p>Tu experiencia de cine favorita</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>📞 (01) 123 4567</p>
+                <p>✉️ contacto@cineplus.com</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            </div>
+
         </div>
 
-        <div class="footer-col">
-            <h4>Síguenos</h4>
-            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        <div class="footer-bottom">
+            <p>© 2026 CinePlus - Todos los derechos reservados</p>
         </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 CinePlus - Todos los derechos reservados</p>
-    </div>
-
-</footer>
+    </footer>
 
 </body>
 </html>
