@@ -226,19 +226,89 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 }
 
 
-/* Css register y logger */
-
-/*  header opcion*/
-.login-form{
-    max-width: 350px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #722F37;
-    color: #f9f9f9;
+/* ===== FORMULARIOS LOGIN Y REGISTRO ===== */
+.login-form {
+    max-width: 380px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #fff; /* Fondo claro tipo tarjeta */
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #722F37;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Inputs */
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #800000;
+    box-shadow: 0 0 6px rgba(128,0,0,0.5);
+    outline: none;
+}
+
+/* Checkbox de términos */
+.terminos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Botón */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #722F37, #8f3a45);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #8f3a45, #a44a55);
+}
+
+/* Enlace de registro/login */
+.registro-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.registro-link a {
+    color: #800000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.registro-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HEADER ===== */
 .header-simple {
     background: linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);
     padding: 15px 30px;
@@ -261,35 +331,6 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 .header-simple h1 {
     font-size: 24px;
-}
-
-
-.btn-login {
-    width: 100%;
-    padding: 5px;
-    background-color: #fff; 
-    color: #722F37;;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.btn-login:hover {
-    background-color: #800000;
-    color: #fff ; 
-}
-
-.registro-link{
-    margin-top: 15px;
-    text-align: center;
-}
-
-.registro-link a {
-    color: #800000; 
-    font-weight: bold;
-    text-decoration: none;
 }
 
 /*
