@@ -228,11 +228,12 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* ===== FORMULARIOS LOGIN Y REGISTRO ===== */
 .login-form {
-    max-width: 380px;
-    margin: 60px auto;
-    padding: 25px;
+    width: 100%;
+    max-width: 420px; 
+    margin: 0 auto;
+    padding: 30px;
     border-radius: 10px;
-    background-color: #fff; /* Fondo claro tipo tarjeta */
+    background-color: #fff; 
     color: #333;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
@@ -241,7 +242,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     text-align: center;
     margin-bottom: 20px;
     color: #722F37;
-    font-size: 22px;
+    font-size: 24px; 
     font-weight: bold;
 }
 
