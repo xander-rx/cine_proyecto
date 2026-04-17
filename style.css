@@ -308,6 +308,8 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     text-decoration: underline;
 }
 
+
+
 /* ===== HEADER ===== */
 .header-simple {
     background: linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);

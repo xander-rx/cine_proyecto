@@ -17,10 +17,20 @@
         <main>
           <form action="#" method="post" class="login-form">
             <h2>Crear Cuenta</h2>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
-            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido" required>
+
+            <label for="nombre"><strong>Nombres</strong></label><br><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre Completo" required>
+
+            <label for="apellido"><strong>Apellidos</strong></label><br><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese sus Apellidos" required>
+
+            <label for="usuario"><strong>Usuario</strong></label><br><br>
             <input type="text" id="usuario" name="usuario" placeholder="Ingrese su Usuario" required>
+
+            <label for="correo"><strong>Correo electrónico</strong></label><br><br>
             <input type="email" id="correo" name="correo" placeholder="Ingrese su Correo" required>
+
+            <label for="password"><strong>Contraseña</strong></label><br><br>
             <input type="password" id="password" name="password" placeholder="Ingrese su Contraseña" required minlength="6">
             <input type="password" id="confirmar" name="confirmar" placeholder="Confirmar Contraseña" required minlength="6">
 
