@@ -1,7 +1,6 @@
-
-
 /* Response */
 @media (max-width: 768px) {
+
     /* Header en columna en movil */
     .header {
         flex-direction: column;
@@ -28,11 +27,13 @@
     }
 
     /* Secciones con scroll horizontal en tablas */
-    .sedes, .dulceria {
+    .sedes,
+    .dulceria {
         padding: 20px 15px;
     }
 
-    .tabla-sedes, .tabla-menu {
+    .tabla-sedes,
+    .tabla-menu {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
@@ -58,7 +59,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -79,7 +81,7 @@ main {
     align-items: center;
     min-height: auto;
     padding: 60px 20px;
-    flex:1
+    flex: 1
 }
 
 /*CSS Header (flexbox) 
@@ -87,7 +89,7 @@ main {
 linear-gradient(to right, ##05070d, #111827, #05070d)
 */
 
-.header{ 
+.header {
     background: linear-gradient(to right, #2a0f13, #722F37, #2a0f13);
     color: white;
     display: flex;
@@ -95,13 +97,13 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     justify-content: space-between;
     padding: 12px 30px;
     border-bottom: 1px solid #2b2f3a;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 
 /* (logo)*/
 
-.logo-link{
+.logo-link {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -111,7 +113,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* Imagen (logo)*/
 
-.header_logo img{
+.header_logo img {
     width: 150px;
     height: auto;
     display: block;
@@ -119,14 +121,14 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* Letras (logo)*/
 
-.header_title{
+.header_title {
     font-size: 28px;
     font-weight: bold;
 }
 
 /* Opciones (nav)*/
 
-.nav{
+.nav {
     display: flex;
     gap: 28px;
     align-items: center;
@@ -134,7 +136,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* Letras de la Opcion (nav)*/
 
-.nav a{
+.nav a {
     color: white;
     text-decoration: none;
     font-size: 17px;
@@ -143,13 +145,13 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* Letras cuando selecciona(nav)*/
 
-.nav a:hover{
+.nav a:hover {
     color: #ffb3b3;
 }
 
 /* Div general de los Logos de accion*/
 
-.header_acciones{
+.header_acciones {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -157,7 +159,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /* Logos de accion*/
 
-.header_acciones a img{
+.header_acciones a img {
     width: 58px;
     height: 58px;
     object-fit: contain;
@@ -166,14 +168,14 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 /*footer GENERAL*/
 
-.footer_index{
+.footer_index {
     background: linear-gradient(90deg, #1a0a0c 0%, #722F37 50%, #1a0a0c 100%);
     color: white;
     padding: 35px 30px 15px;
     margin-top: 40px;
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -183,7 +185,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 
 
-.footer-col{
+.footer-col {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -194,7 +196,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 .footer_index h4 {
     margin-bottom: 10px;
     color: #ffe5e5;
-    font-size: 20px ;
+    font-size: 20px;
 }
 
 .footer_index p,
@@ -215,7 +217,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     width: fit-content;
 }
 
-.footer_index a:hover{
+.footer_index a:hover {
     color: #ffb3b3;
     transform: translateX(3px);
 }
@@ -227,7 +229,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     text-align: center;
 }
 
-.footer-bottom p{
+.footer-bottom p {
     margin: 0;
     font-size: 14px;
     color: #ddd;
@@ -242,7 +244,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     border-radius: 10px;
     background-color: #fff;
     color: #333;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .login-form label {
@@ -273,7 +275,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 .login-form input:focus {
     border-color: #800000;
-    box-shadow: 0 0 6px rgba(128,0,0,0.5);
+    box-shadow: 0 0 6px rgba(128, 0, 0, 0.5);
     outline: none;
 }
 
@@ -364,7 +366,10 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 .hero::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: radial-gradient(ellipse at center, rgba(114, 47, 55, 0.25) 0%, transparent 70%);
     pointer-events: none;
 }
@@ -516,4 +521,57 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 .pelicula:hover {
     transform: scale(1.05);
     box-shadow: 0 0 22px rgba(114, 47, 55, 0.6);
+}
+
+
+.dulceria-contenedor {
+    display: flex;
+    flex-direction: column;
+    /* menú arriba, tabla abajo */
+    align-items: center;
+    /* centra todo horizontalmente */
+    width: 100%;
+}
+
+/* Menú */
+.dulceria-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: -50px;
+}
+
+.dulceria-menu button {
+    background: #722F37;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.dulceria-menu button:hover {
+    background: #DC143C;
+}
+
+
+
+.dulceria-tabla {
+    margin: 0 auto;
+    /* centra la tabla en la página */
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.dulceria-tabla td {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.precio {
+    font-weight: bold;
+    color: #b22222;
 }
