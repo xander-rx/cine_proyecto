@@ -622,3 +622,57 @@ body {
     background-color: #a83232;
     cursor:pointer;
 }
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #3a0d0d, #000000);
+    color: white;
+}
+
+/* HEADER */
+.header {
+    background-color: #5a0f0f;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+
+/* SECCIÓN */
+.sedes {
+    text-align: center;
+    padding: 40px;
+}
+
+.sedes h2 {
+    margin-bottom: 30px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* CUADROS DE LAS SEDES */
+.card {
+    background-color: #7b1e1e;
+    padding: 20px;
+    width: 250px;
+}
+
+.card:hover {
+    background-color: #a83232;
+    cursor:pointer;
+}
+
+
