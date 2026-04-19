@@ -638,54 +638,71 @@ body {
 
 
 
-/* ===== PROMOCIONES FUNCIONAL ===== */
+/* ===== PROMOCIONES===== */
 
 .promociones {
-background-color: #000;
-padding: 50px 20px;
+background-color: #0f0f0f;
+padding: 60px 20px;
 text-align: center;
 }
 
 .promo-titulo {
-color: white;
+font-size: 28px;
+letter-spacing: 3px;
 margin-bottom: 10px;
 }
 
 .promo-subtitulo {
 color: #aaa;
-margin-bottom: 30px;
+margin-bottom: 40px;
 }
 
-/* GRID QUE SÍ FUNCIONA */
+/* GRID */
 .promociones-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
 gap: 20px;
 }
 
 /* TARJETAS */
-.promo-card {
-background-color: #111;
-color: white;
-width: 300px;
+.promociones .promo-card {
+background: linear-gradient(to bottom, #1a1a1a, #000);
+height: 260px;
 padding: 20px;
 border-radius: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+border: 1px solid #222;
 transition: 0.3s;
 }
 
-/* HOVER */
-.promo-card:hover {
-transform: scale(1.05);
-background-color: #1a1a1a;
+/* TEXTO */
+.promociones .promo-card h3 {
+font-size: 16px;
 }
 
-/* CONDICIONES */
-.promo-condiciones {
-text-align: left;
+.promociones .promo-card p {
 font-size: 13px;
-color: #ccc;
-margin-top: 10px;
-padding-left: 15px;
+color: #bbb;
+}
+
+/* PRECIO */
+.promociones .promo-card span {
+color: #ff4d4d;
+font-weight: bold;
+}
+
+/* HOVER */
+.promociones .promo-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+.promociones-grid {
+grid-template-columns: 1fr;
+}
 }
 
