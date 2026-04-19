@@ -784,3 +784,44 @@ grid-template-columns: 1fr;
 }
 }
 
+
+
+
+
+
+
+
+/* ===== FIX PROMOCIONES (CENTRADO Y ANCHO COMPLETO) ===== */
+
+/* Hace que promociones ocupe TODO el ancho */
+.promociones {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* Evita que el main limite el ancho */
+main {
+width: 100%;
+}
+
+/* GRID centrado y uniforme */
+.promociones-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+width: 100%;
+}
+
+/* TARJETAS */
+.promociones .promo-card {
+width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+.promociones-grid {
+grid-template-columns: 1fr;
+}
+}
+
