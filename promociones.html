@@ -1,75 +1,115 @@
-<!DOCTYPE html><html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promociones</title><!-- IMPORTANTE: mismo nombre que tu CSS -->
-<link rel="stylesheet" href="style.css">
+    <title>Promociones - CinePlus</title>
+    <link rel="icon" href="images/icon_cineplus.png">
+    <link rel="stylesheet" href="style.css">
+</head><body><!-- HEADER (igual al index) -->
+<header class="header">
+    <a href="index.html" class="logo-link">
+        <div class="header_logo">
+            <img src="images/icon_cineplus.png" alt="LogocinePlus">
+        </div>
+        <div>
+            <h1 class="header_title">CinePlus</h1>
+        </div>
+    </a>
 
-</head><body><section class="promociones">
-    <h2 class="promo-titulo">PROMOCIONES</h2>
-    <p class="promo-subtitulo">Ofertas exclusivas por tiempo limitado</p><div class="promociones-grid">
-
-    <div class="promo-card">
-        <h3>Martes 2x1</h3>
-        <p>Compra una entrada y la segunda es gratis.</p>
-        <ul class="promo-condiciones">
-            <li>Solo martes</li>
-            <li>No feriados</li>
-            <li>Sujeto a disponibilidad</li>
-        </ul>
+    <div>
+        <nav class="nav">
+            <a href="peliculas.html">Peliculas</a>
+            <a href="cines.html">Cines</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="dulceria.html">Dulcería</a>
+        </nav>
     </div>
 
-    <div class="promo-card">
-        <h3>Combo Cine</h3>
-        <p>Canchita + bebida a precio especial.</p>
-        <ul class="promo-condiciones">
-            <li>Todo el día</li>
-            <li>No acumulable</li>
-            <li>Stock limitado</li>
-        </ul>
+    <div class="header_acciones">
+        <a href="login.html">
+            <img src="images/Imagen1.png" alt="Usuario">
+        </a>
+        <a href="buscar.html">
+            <img src="images/buscador.png" alt="Buscar">
+        </a>
+    </div>
+</header>
+
+<!-- CONTENIDO -->
+<main>
+    <section class="promociones">
+        <h2 class="promo-titulo">PROMOCIONES</h2>
+        <p class="promo-subtitulo">Aprovecha nuestras mejores ofertas</p>
+
+        <div class="promociones-grid">
+
+            <div class="promo-card">
+                <h3>🎟️ Martes 2x1</h3>
+                <p>Compra una entrada y la segunda es gratis.</p>
+                <span>2x1</span>
+            </div>
+
+            <div class="promo-card">
+                <h3>🍿 Combo Cine</h3>
+                <p>Canchita + bebida a precio especial.</p>
+                <span>S/ 15</span>
+            </div>
+
+            <div class="promo-card">
+                <h3>👨‍👩‍👧‍👦 Pack Familiar</h3>
+                <p>Entradas + combo con descuento.</p>
+                <span>20% OFF</span>
+            </div>
+
+            <div class="promo-card">
+                <h3>🎓 Estudiantes</h3>
+                <p>Presenta tu carnet.</p>
+                <span>25% OFF</span>
+            </div>
+
+            <div class="promo-card">
+                <h3>🌙 Nocturna</h3>
+                <p>Después de las 9pm.</p>
+                <span>30% OFF</span>
+            </div>
+
+            <div class="promo-card">
+                <h3>🎂 Cumpleaños</h3>
+                <p>Entrada gratis en tu día.</p>
+                <span>GRATIS</span>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER (igual al index) -->
+<footer class="footer_index">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>CinePlus</h3>
+            <p>Tu experiencia de cine favorita</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📞 (01) 123 4567</p>
+            <p>✉️ contacto@cineplus.com</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        </div>
+
     </div>
 
-    <div class="promo-card">
-        <h3>Pack Familiar</h3>
-        <p>Entradas + combo con descuento.</p>
-        <ul class="promo-condiciones">
-            <li>Mínimo 4 personas</li>
-            <li>No estrenos</li>
-            <li>Sujeto a disponibilidad</li>
-        </ul>
+    <div class="footer-bottom">
+        <p>© 2026 CinePlus - Todos los derechos reservados</p>
     </div>
+</footer>
 
-    <div class="promo-card">
-        <h3>Descuento Estudiante</h3>
-        <p>Presenta tu carnet.</p>
-        <ul class="promo-condiciones">
-            <li>Lunes a viernes</li>
-            <li>Carnet obligatorio</li>
-            <li>No acumulable</li>
-        </ul>
-    </div>
-
-    <div class="promo-card">
-        <h3>Función Nocturna</h3>
-        <p>Precios después de las 9pm.</p>
-        <ul class="promo-condiciones">
-            <li>Desde 9pm</li>
-            <li>No feriados</li>
-            <li>Salas seleccionadas</li>
-        </ul>
-    </div>
-
-    <div class="promo-card">
-        <h3>Cumpleaños Gratis</h3>
-        <p>Entrada gratis en tu día.</p>
-        <ul class="promo-condiciones">
-            <li>Presentar DNI</li>
-            <li>Solo el día</li>
-            <li>No transferible</li>
-        </ul>
-    </div>
-
-</div>
-
-</section></body>
+</body>
 </html>
