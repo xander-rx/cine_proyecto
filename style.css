@@ -667,7 +667,7 @@ body {
 
 
 
-/* ===== PROMOCIONES ESTILO CINE ROJO PRO ===== */
+/* ===== PROMOCIONES===== */
 
 .promociones {
 background: radial-gradient(circle at center, #0a0a0a, #000);
@@ -772,9 +772,10 @@ font-weight: bold;
 
 /* HOVER */
 .promociones .promo-card:hover {
-transform: translateY(-10px) scale(1.03);
-box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+transform: none; /* elimina movimiento /
+background: linear-gradient(160deg, #3a141a, #1a0a0c); / más rojo */
 border: 1px solid #ff4d4d;
+box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
 /* RESPONSIVE */
