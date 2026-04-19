@@ -638,22 +638,24 @@ body {
 
 
 
-/* ===== PROMOCIONES===== */
+/* ===== PROMOCIONES ESTILO CINE ROJO PRO ===== */
 
 .promociones {
-background-color: #0f0f0f;
+background: radial-gradient(circle at center, #0a0a0a, #000);
 padding: 60px 20px;
 text-align: center;
 }
 
+/* TITULOS */
 .promo-titulo {
-font-size: 28px;
-letter-spacing: 3px;
+font-size: 30px;
+letter-spacing: 4px;
+color: #ff4d4d;
 margin-bottom: 10px;
 }
 
 .promo-subtitulo {
-color: #aaa;
+color: #bbb;
 margin-bottom: 40px;
 }
 
@@ -666,56 +668,56 @@ gap: 20px;
 
 /* TARJETAS */
 .promociones .promo-card {
-background: linear-gradient(to bottom, #1a1a1a, #000);
-height: 260px;
+background: linear-gradient(160deg, #2a0f13, #111);
+height: 280px;
 padding: 20px;
-border-radius: 10px;
+border-radius: 12px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-border: 1px solid #222;
+border: 1px solid #3a1a1a;
 transition: 0.3s;
+position: relative;
+overflow: hidden;
 }
 
-/* TEXTO */
+/* EFECTO LUZ ROJA */
+.promociones .promo-card::before {
+content: "";
+position: absolute;
+top: -100%;
+left: -100%;
+width: 200%;
+height: 200%;
+background: linear-gradient(120deg, transparent, rgba(255,0,0,0.2), transparent);
+transform: rotate(25deg);
+transition: 0.5s;
+}
+
+.promociones .promo-card:hover::before {
+top: 0;
+left: 0;
+}
+
+/* TITULO */
 .promociones .promo-card h3 {
-font-size: 16px;
+font-size: 17px;
+color: #fff;
 }
 
+/* DESCRIPCIÓN */
 .promociones .promo-card p {
-font-size: 13px;
-color: #bbb;
+font-size: 14px;
+color: #ddd;
 }
 
-/* PRECIO */
-.promociones .promo-card span {
-color: #ff4d4d;
-font-weight: bold;
-}
-
-/* HOVER */
-.promociones .promo-card:hover {
-transform: translateY(-8px);
-box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-.promociones-grid {
-grid-template-columns: 1fr;
-}
-}
-
-
-
-/* ===== CONDICIONES PROMOCIONES ===== */
-
+/* CONDICIONES */
 .promociones .promo-condiciones {
 list-style: none;
 padding: 0;
 margin: 10px 0;
 font-size: 12px;
-color: #aaa;
+color: #ccc;
 text-align: left;
 }
 
@@ -730,5 +732,26 @@ content: "•";
 position: absolute;
 left: 0;
 color: #ff4d4d;
+}
+
+/* PRECIO */
+.promociones .promo-card span {
+color: #ff6666;
+font-size: 18px;
+font-weight: bold;
+}
+
+/* HOVER */
+.promociones .promo-card:hover {
+transform: translateY(-10px) scale(1.03);
+box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+border: 1px solid #ff4d4d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+.promociones-grid {
+grid-template-columns: 1fr;
+}
 }
 
