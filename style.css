@@ -521,6 +521,15 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     box-shadow: 0 0 22px rgba(114, 47, 55, 0.6);
 }
 
+.marco img {
+    max-width:  150px;   /* antes estaba en 100px, ahora más grande */
+    border-radius: 15px;
+    margin-bottom: 10px;
+    width: 160px;       
+    height: 160px;      
+    object-fit: cover;              /
+}
+
 
 .dulceria-contenedor {
     display: flex;
@@ -536,7 +545,7 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin-top: -50px;
+    margin-top: -35px;
 }
 
 .dulceria-menu button {
@@ -547,13 +556,15 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
 
 .dulceria-menu button:hover {
     background: #DC143C;
 }
+
+
 
 
 
@@ -567,11 +578,28 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 .dulceria-tabla td {
     padding: 20px;
     vertical-align: top;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nombre {
+    font-weight: bold;
+    font-size: px;
+    color: #fff;
+    margin-top: 10px;
+    
 }
 
 .precio {
+    display: inline-block;
+    padding: 4px 10px;              /* espacio reducido */
+    border: 2px solid #ff0000;      /* borde dorado */
+    border-radius: 12px;            /* bordes redondeados */
     font-weight: bold;
-    color: #b22222;
+    font-size: 14px;
+    color: #ff0004;
+    background: #3a0d0d;            /* fondo oscuro para contraste */
+    margin-top: 8px;
+;
 }
 
 
@@ -619,6 +647,7 @@ body {
 .card:hover {
     background-color: #a83232;
     cursor:pointer;
+
 }
 
 
