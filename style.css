@@ -76,12 +76,10 @@ body {
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     min-height: auto;
     padding: 60px 20px;
-    flex: 1
+    flex: 1;
 }
 
 /*CSS Header (flexbox) 
