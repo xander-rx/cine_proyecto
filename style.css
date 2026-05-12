@@ -527,16 +527,19 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     margin-bottom: 10px;
     width: 160px;       
     height: 160px;      
-    object-fit: cover;              /
+    object-fit: cover;      
+    transition: transform 0.3s;        /
+}
+
+.marco img:hover {
+    transform: rotate(-2deg) scale(1.1);
 }
 
 
 .dulceria-contenedor {
     display: flex;
     flex-direction: column;
-    /* menú arriba, tabla abajo */
     align-items: center;
-    /* centra todo horizontalmente */
     width: 100%;
 }
 
@@ -555,24 +558,23 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     padding: 12px 20px;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: transform 0.3s, background 0.3s;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
 
 .dulceria-menu button:hover {
     background: #DC143C;
+    transform: scale(1.1);
 }
 
-
-
-
-
 .dulceria-tabla {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
-    /* centra la tabla en la página */
-    border-collapse: collapse;
-    text-align: center;
+    justify-content: center;
 }
 
 .dulceria-tabla td {
@@ -582,26 +584,49 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 }
 
 .nombre {
-    font-weight: bold;
-    font-size: px;
+     font-weight: bold;
+    font-size: 16px;
     color: #fff;
     margin-top: 10px;
+    transition: color 0.3s;
     
+}
+
+.producto-card:hover .nombre {
+    color: #FFD700;
 }
 
 .precio {
     display: inline-block;
-    padding: 4px 10px;              /* espacio reducido */
-    border: 2px solid #ff0000;      /* borde dorado */
-    border-radius: 12px;            /* bordes redondeados */
+    padding: 6px 12px;
+    border: 2px solid #FFD700;
+    border-radius: 12px;
     font-weight: bold;
     font-size: 14px;
-    color: #ff0004;
-    background: #3a0d0d;            /* fondo oscuro para contraste */
+    color: #FFD700;
+    background: #2c0a0a;
     margin-top: 8px;
-;
+    transition: background 0.3s, transform 0.3s;
 }
 
+.producto-card:hover .precio {
+    background: #722F37;
+    transform: scale(1.1);
+}
+
+/* Tarjetas de producto */
+.producto-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.6);
+}
 
 /*estilos de las sedes */
 
