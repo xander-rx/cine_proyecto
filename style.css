@@ -851,3 +851,208 @@ grid-template-columns: 1fr;
 }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* =============== C I N E S (SEGURO) ================== */
+/* ===================================================== */
+
+.cine-section{
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.cine-title{
+    font-size: 42px;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.cine-subtitle{
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.cine-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* CARD DE CINES (NO AFECTA OTRAS .card) */
+.cine-card{
+    background: linear-gradient(160deg, #2a0f13, #111);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 18px rgba(255,0,0,0.08);
+    transition: 0.4s ease;
+}
+
+.cine-card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 25px rgba(255,0,0,0.35);
+}
+
+.cine-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cine-card h3{
+    margin-top: 15px;
+    color: #fff;
+}
+
+.cine-card p{
+    color: #ccc;
+    margin: 8px 0;
+}
+
+.cine-card button{
+    margin: 20px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg,#722F37,#ff4d4d);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cine-card button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,0,0,0.4);
+}
+
+/* ===================================================== */
+/* ============ P R O M O C I O N E S ================== */
+/* ===================================================== */
+
+.promo-section{
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.promo-main-title{
+    font-size: 42px;
+    color: #ff4d4d;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.promo-main-subtitle{
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.promo-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* CARD PROMOCIONES (NO TOCA OTRAS CLASES) */
+.promo-box{
+    background: linear-gradient(160deg, #2a0f13, #111);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.promo-box:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 25px rgba(255,0,0,0.35);
+}
+
+.promo-box img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.promo-box h3{
+    margin-top: 15px;
+    color: #fff;
+}
+
+.promo-box p{
+    color: #ccc;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
+.promo-box span{
+    color: #ff4d4d;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.promo-box button{
+    margin: 15px;
+    width: calc(100% - 30px);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg,#722F37,#ff4d4d);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.promo-box button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255,0,0,0.4);
+}
+
+/* TAG PROMO */
+.promo-tag{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ff1e1e;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ===================================================== */
+/* ================= RESPONSIVE ======================== */
+/* ===================================================== */
+
+@media (max-width: 768px){
+
+    .cine-section,
+    .promo-section{
+        padding: 50px 20px;
+    }
+
+    .cine-title,
+    .promo-main-title{
+        font-size: 30px;
+    }
+}
+
