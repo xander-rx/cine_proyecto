@@ -1,28 +1,40 @@
-<!DOCTYPE html><html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promociones - CinePlus</title>
+
     <link rel="icon" href="images/icon_cineplus.png">
     <link rel="stylesheet" href="style.css">
-</head><body><!-- HEADER (SIN CAMBIOS) -->
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
 <header class="header">
+
     <a href="index.html" class="logo-link">
+
         <div class="header_logo">
-            <img src="images/icon_cineplus.png" alt="LogocinePlus">
+            <img src="images/icon_cineplus.png" alt="Logo">
         </div>
-        <div>
-            <h1 class="header_title">CinePlus</h1>
-        </div>
+
+        <h1 class="header_title">CinePlus</h1>
+
     </a>
 
-    <div>
-        <nav class="nav">
-            <a href="peliculas.html">Peliculas</a>
-            <a href="cines.html">Cines</a>
-            <a href="promociones.html">Promociones</a>
-            <a href="dulceria.html">Dulcería</a>
-        </nav>
-    </div>
+    <nav class="nav">
+        <a href="peliculas.html">Películas</a>
+        <a href="cines.html">Cines</a>
+        <a href="promociones.html">Promociones</a>
+        <a href="dulceria.html">Dulcería</a>
+    </nav>
 
     <div class="header_acciones">
         <a href="login.html">
@@ -32,88 +44,77 @@
             <img src="images/buscador.png" alt="Buscar">
         </a>
     </div>
+
 </header>
 
-<!-- CONTENIDO PROMOCIONES -->
+<!-- MAIN -->
 <main>
-    <section class="promociones">
-        <h2 class="promo-titulo">PROMOCIONES</h2>
-        <p class="promo-subtitulo">Disfruta ofertas exclusivas en CinePlus</p>
 
-        <div class="promociones-grid">
+<section class="promo-section">
 
-            <div class="promo-card">
-                <h3>🎬 Estreno Fan</h3>
-                <p>Acceso anticipado a estrenos antes que todos.</p>
-                <ul class="promo-condiciones">
-                    <li>Solo películas seleccionadas</li>
-                    <li>Stock limitado</li>
-                    <li>Compra online</li>
-                </ul>
-                <span>S/ 18</span>
-            </div>
+    <h2 class="promo-main-title">PROMOCIONES</h2>
+    <p class="promo-main-subtitle">Aprovecha descuentos exclusivos</p>
 
-            <div class="promo-card">
-                <h3>🍿 Combo Gigante</h3>
-                <p>Canchita grande + 2 bebidas + nachos.</p>
-                <ul class="promo-condiciones">
-                    <li>Válido todos los días</li>
-                    <li>No acumulable</li>
-                    <li>Sujeto a stock</li>
-                </ul>
-                <span>S/ 25</span>
-            </div>
+    <div class="promo-grid">
 
-            <div class="promo-card">
-                <h3>❤️ Parejas</h3>
-                <p>2 entradas + combo romántico.</p>
-                <ul class="promo-condiciones">
-                    <li>De lunes a jueves</li>
-                    <li>No feriados</li>
-                    <li>Salas estándar</li>
-                </ul>
-                <span>15% OFF</span>
-            </div>
-
-            <div class="promo-card">
-                <h3>👾 Gamer Night</h3>
-                <p>Funciones nocturnas con descuentos especiales.</p>
-                <ul class="promo-condiciones">
-                    <li>Desde las 10pm</li>
-                    <li>Fines de semana</li>
-                    <li>Salas seleccionadas</li>
-                </ul>
-                <span>30% OFF</span>
-            </div>
-
-            <div class="promo-card">
-                <h3>🎉 Grupo Amigos</h3>
-                <p>Entradas grupales con descuento.</p>
-                <ul class="promo-condiciones">
-                    <li>Mínimo 5 personas</li>
-                    <li>No aplica estrenos</li>
-                    <li>Sujeto a disponibilidad</li>
-                </ul>
-                <span>20% OFF</span>
-            </div>
-
-            <div class="promo-card">
-                <h3>🎓 Universitarios</h3>
-                <p>Descuento especial con carnet.</p>
-                <ul class="promo-condiciones">
-                    <li>Lunes a viernes</li>
-                    <li>Carnet obligatorio</li>
-                    <li>No acumulable</li>
-                </ul>
-                <span>25% OFF</span>
-            </div>
-
+        <div class="promo-box">
+            <div class="promo-tag">TOP</div>
+            <img src="images/promo1.jpg">
+            <h3>🎬 Estreno Fan</h3>
+            <p>Acceso anticipado a estrenos.</p>
+            <span>S/ 18</span>
+            <button>Obtener Oferta</button>
         </div>
-    </section>
+
+        <div class="promo-box">
+            <img src="images/promo2.jpg">
+            <h3>🍿 Combo Gigante</h3>
+            <p>Canchita + bebida + nachos.</p>
+            <span>S/ 25</span>
+            <button>Obtener Oferta</button>
+        </div>
+
+        <div class="promo-box">
+            <img src="images/promo3.jpg">
+            <h3>❤️ Parejas</h3>
+            <p>2 entradas + combo romántico.</p>
+            <span>15% OFF</span>
+            <button>Obtener Oferta</button>
+        </div>
+
+        <div class="promo-box">
+            <img src="images/promo4.jpg">
+            <h3>🎓 Universitarios</h3>
+            <p>Descuento con carnet.</p>
+            <span>25% OFF</span>
+            <button>Obtener Oferta</button>
+        </div>
+
+        <div class="promo-box">
+            <img src="images/promo5.jpg">
+            <h3>👾 Gamer Night</h3>
+            <p>Noches con descuento.</p>
+            <span>30% OFF</span>
+            <button>Obtener Oferta</button>
+        </div>
+
+        <div class="promo-box">
+            <img src="images/promo6.jpg">
+            <h3>🎉 Grupo Amigos</h3>
+            <p>Descuento para grupos.</p>
+            <span>20% OFF</span>
+            <button>Obtener Oferta</button>
+        </div>
+
+    </div>
+
+</section>
+
 </main>
 
-<!-- FOOTER (SIN CAMBIOS) -->
+<!-- FOOTER -->
 <footer class="footer_index">
+
     <div class="footer-container">
 
         <div class="footer-col">
@@ -129,16 +130,17 @@
 
         <div class="footer-col">
             <h4>Síguenos</h4>
-            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.youtube.com/">YouTube</a>
         </div>
 
     </div>
 
     <div class="footer-bottom">
-        <p>© 2026 CinePlus - Todos los derechos reservados</p>
+        <p>© 2026 CinePlus</p>
     </div>
+
 </footer>
 
 </body>
