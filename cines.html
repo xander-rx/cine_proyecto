@@ -1,152 +1,171 @@
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cines - CinePlus</title>
+
+    <link rel="icon" href="images/icon_cineplus.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
 <body>
 
-    <header class="header">
-        <!-- encabezado 
-         Divido en clases para poder trabajar el style.css
-         header_logos-> Se usa para el logo y letras de la pagina
-         Se crea un nav que redirecciona a otras paginas
-        -->
-        <a href="index.html" class="logo-link">
-            <div class="header_logo">
-                <img src="images/icon_cineplus.png" alt="LogocinePlus">
-            </div>
-            <div>
-                <h1 class="header_title">CinePlus</h1>
-            </div>
+<!-- HEADER -->
+<header class="header">
+
+    <a href="index.html" class="logo-link">
+
+        <div class="header_logo">
+            <img src="images/icon_cineplus.png" alt="Logo CinePlus">
+        </div>
+
+        <h1 class="header_title">CinePlus</h1>
+
+    </a>
+
+    <nav class="nav">
+        <a href="peliculas.html">Películas</a>
+        <a href="cines.html">Cines</a>
+        <a href="promociones.html">Promociones</a>
+        <a href="dulceria.html">Dulcería</a>
+    </nav>
+
+    <div class="header_acciones">
+        <a href="login.html">
+            <img src="images/Imagen1.png" alt="Usuario">
         </a>
+        <a href="buscar.html">
+            <img src="images/buscador.png" alt="Buscar">
+        </a>
+    </div>
 
-        <!--
-            Apartado del header que se usara para navegar entre paginas <nav>
-        -->
-        <div>
-            <nav class="nav">
-                <a href="peliculas.html">Peliculas</a>
-                <a href="cines.html">Cines</a>
-                <a href="promociones.html">Promociones</a>
-                <a href="dulceria.html">Dulcería</a>
-            </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+
+<section class="cine-section">
+
+    <h2 class="cine-title">NUESTRAS SEDES</h2>
+    <p class="cine-subtitle">Encuentra tu CinePlus más cercano</p>
+
+    <div class="cine-grid">
+
+        <div class="cine-card">
+            <img src="images/cine1.jpg" alt="">
+            <h3>Sede Ate</h3>
+            <p>📍 Av. Principal 123 - Ate</p>
+            <p>🕒 10:00 am - 11:00 pm</p>
+            <button>Ver Cartelera</button>
         </div>
 
-        <!--
-            Apartado de Buscar y Loguear/Registrarse
-        -->
-
-        <div class="header_acciones">
-            <a href="login.html" class="icon_usuario">
-                <img src="images/Imagen1.png" alt="Usuario">
-            </a>
-            <a href="buscar.html" class="icon_buscador">
-                <img src="images/buscador.png" alt="Buscar">
-            </a>
+        <div class="cine-card">
+            <img src="images/cine2.jpg" alt="">
+            <h3>Sede Lurigancho</h3>
+            <p>📍 Av. 16 de Mayo 456</p>
+            <p>🕒 11:00 am - 10:00 pm</p>
+            <button>Ver Cartelera</button>
         </div>
 
-
-    </header>
-
-
-    <main>
-    <section class="sedes">
-        <h2>Nuestras Sedes</h2>
-
-        <div class="contenedor">
-
-            <div class="card">
-                <h3>Sede Ate</h3>
-                <p>Av. Principal 123 - Ate</p>
-                <p>10:00 am - 11:00 pm</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede Lurigancho</h3>
-                <p>Av. 16 de Mayo 456 - Lima</p>
-                <p>11:00 am - 10:00 pm</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede Surco</h3>
-                <p>Surco 789 - Lima</p>
-                <p>10:00 am - 10:30 pm</p>
-            </div>
-            
-            <div class="card">
-                <h3>Sede San Juan de Lurigancho</h3>
-                <p>Av. Próceres 101 - Lima</p>
-                <p>10:00 am - 11:00 pm</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede Los Olivos</h3>
-                <p>Av. Universitaria 550 - Lima</p>
-                <p>11:00 am - 10:00 pm</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede Miraflores</h3>
-                <p>Av. Larco 789 - Lima</p>
-                <p>10:00 am - 12:00 am</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede Callao</h3>
-                <p>Av. Sáenz Peña 300 - Callao</p>
-                <p>10:00 am - 10:30 pm</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede Villa El Salvador</h3>
-                <p>Av. Central 890 - Lima</p>
-                <p>10:30 am - 10:30 pm</p>
-            </div>
-
-            <div class="card">
-                <h3>Sede San Borja</h3>
-                <p>Av. Aviación 2450 - Lima</p>
-                <p>10:00 am - 11:30 pm</p>
-            </div>
-
-        </div>
-    </section>
-    </main>
-
-     <footer class="footer_index">
-        <div class="footer-container">
-            <!-- Columna 1: nombre y slogan del cine -->
-
-            <div class="footer-col">
-                <h3>CinePlus</h3>
-                <p>Tu experiencia de cine favorita</p>
-            </div>
-
-            <!-- Columna 2: informacion de contacto -->
-            <div class="footer-col">
-                <h4>Contacto</h4>
-                <p>📞 (01) 123 4567</p>
-                <p>✉️ contacto@cineplus.com</p>
-            </div>
-
-            <!-- Columna 3: redes sociales -->
-
-            <div class="footer-col">
-                <h4>Síguenos</h4>
-                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-            </div>
-
+        <div class="cine-card">
+            <img src="images/cine3.jpg" alt="">
+            <h3>Sede Surco</h3>
+            <p>📍 Surco 789</p>
+            <p>🕒 10:00 am - 10:30 pm</p>
+            <button>Ver Cartelera</button>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 CinePlus - Todos los derechos reservados</p>
+        <div class="cine-card">
+            <img src="images/cine4.jpg" alt="">
+            <h3>Sede San Juan de Lurigancho</h3>
+            <p>📍 Av. Próceres 101</p>
+            <p>🕒 10:00 am - 11:00 pm</p>
+            <button>Ver Cartelera</button>
         </div>
 
-    </footer>
+        <div class="cine-card">
+            <img src="images/cine5.jpg" alt="">
+            <h3>Sede Los Olivos</h3>
+            <p>📍 Av. Universitaria 550</p>
+            <p>🕒 11:00 am - 10:00 pm</p>
+            <button>Ver Cartelera</button>
+        </div>
+
+        <div class="cine-card">
+            <img src="images/cine6.jpg" alt="">
+            <h3>Sede Miraflores</h3>
+            <p>📍 Av. Larco 789</p>
+            <p>🕒 10:00 am - 12:00 am</p>
+            <button>Ver Cartelera</button>
+        </div>
+
+        <div class="cine-card">
+            <img src="images/cine7.jpg" alt="">
+            <h3>Sede Callao</h3>
+            <p>📍 Av. Sáenz Peña 300</p>
+            <p>🕒 10:00 am - 10:30 pm</p>
+            <button>Ver Cartelera</button>
+        </div>
+
+        <div class="cine-card">
+            <img src="images/cine8.jpg" alt="">
+            <h3>Sede Villa El Salvador</h3>
+            <p>📍 Av. Central 890</p>
+            <p>🕒 10:30 am - 10:30 pm</p>
+            <button>Ver Cartelera</button>
+        </div>
+
+        <div class="cine-card">
+            <img src="images/cine9.jpg" alt="">
+            <h3>Sede San Borja</h3>
+            <p>📍 Av. Aviación 2450</p>
+            <p>🕒 10:00 am - 11:30 pm</p>
+            <button>Ver Cartelera</button>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer_index">
+
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>CinePlus</h3>
+            <p>Tu experiencia de cine favorita</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📞 (01) 123 4567</p>
+            <p>✉️ contacto@cineplus.com</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.youtube.com/">YouTube</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CinePlus</p>
+    </div>
+
+</footer>
 
 </body>
+</html>
 </html>
