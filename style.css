@@ -461,33 +461,206 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     padding: 20px 40px 40px;
 }
 
+/* BOTON GENERAL */
+.btn-comprar,
+.btn-detalles {
+    border: none;
+    padding: 13px;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+/* COMPRAR */
+.btn-comprar {
+    background: linear-gradient(90deg,#d1005b,#ff005d);
+} 
+
+/* DETALLES */
+.btn-detalles {
+    background: linear-gradient(90deg,#0057b8,#007bff);
+}
+
+/* HOVER */
+.btn-comprar:hover,
+.btn-detalles:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== MODAL ========================= */
+/* ===================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.85);
+}
+
+/* CONTENIDO */
+.modal-contenido {
+    background: #f4f4f4;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* BOTON CERRAR */
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* TRAILER */
+.contenedor-trailer iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+/* SECCION INFO */
+.detalle-info {
+    display: flex;
+    gap: 45px;
+    align-items: center;
+    padding: 50px;
+}
+
+/* IMAGEN DEL DETALLE */
+.detalle-info img {
+    width: 280px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+/* TEXTO */
+.detalle-texto {
+    flex: 1;
+}
+
+.detalle-texto h2 {
+    font-size: 60px;
+    color: #0057b8;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+/* META */
+.detalle-meta {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* TITULO SINOPSIS */
+.detalle-texto h3 {
+    color: #0057b8;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPCION */
+.detalle-texto p {
+    color: #222;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* BOTON GRANDE */
+.btn-comprar.grande {
+    margin-top: 25px;
+    padding: 15px 35px;
+    font-size: 18px;
+}
+
+/* ===================================================== */
+/* ==================== RESPONSIVE ===================== */
+/* ===================================================== */
+
+@media(max-width:900px){
+
+    .detalle-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .detalle-texto h2 {
+        font-size: 38px;
+    }
+
+    .detalle-texto h3 {
+        font-size: 28px;
+    }
+
+    .detalle-texto p {
+        font-size: 16px;
+    }
+
+    .detalle-info img {
+        width: 220px;
+    }
+
+    .contenedor-trailer iframe {
+        height: 260px;
+    }
+
+    .pelicula {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .catalogo {
+        padding: 15px;
+        gap: 15px;
+    }
+}
 /* Tarjeta individual de pelicula */
 
 .pelicula {
+    position: relative;
     background-color: #1a1a1a;
-    width: 200px;
-    border-radius: 4px;
+    width: 230px;
+    border-radius: 12px;
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid #262626;
+    padding-bottom: 18px;
 }
 
 /* Imagen del poster */
 
 .pelicula img {
     width: 100%;
-    height: 280px;
+    height: 320px;
     object-fit: cover;
+    display: block;
 }
 
 /* Titulo de la pelicula */
 
 .pelicula h3 {
-    margin: 10px 0 5px;
+    margin: 12px 0 6px;
     color: #ffffff;
-    font-size: 15px;
-    padding: 0 10px;
+    font-size: 17px;
+    padding: 0 12px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -495,9 +668,10 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
 
 .pelicula p {
     font-size: 13px;
-    padding: 0 10px 12px;
-    color: #999;
+    padding: 0 14px;
+    color: #bbb;
     line-height: 1.5;
+    min-height: 70px;
 }
 
 /* Etiqueta de genero */
@@ -507,17 +681,31 @@ linear-gradient(to right, ##05070d, #111827, #05070d)
     background-color: #722F37;
     color: white;
     font-size: 11px;
-    padding: 3px 9px;
-    margin-top: 8px;
-    margin-bottom: 4px;
-    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
     letter-spacing: 1px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* CINTA ESTRENO */
+.pelicula .cinta {
+    position: absolute;
+    top: 18px;
+    left: -45px;
+    background: #d1005b;
+    color: white;
+    padding: 10px 50px;
+    transform: rotate(-35deg);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 5;
 }
 
 /* Efecto hover de la tarjeta */
 
 .pelicula:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     box-shadow: 0 0 22px rgba(114, 47, 55, 0.6);
 }
 
