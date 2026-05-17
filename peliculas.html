@@ -73,12 +73,27 @@
         -->
         <section class="catalogo">
 
-            <div class="pelicula">
-                <img src="images/avatar.png" alt="Avatar">
-                <span class="genero">Ciencia Ficción</span>
-                <h3>Avatar</h3>
-                <p>Un exmarine viaja al planeta Pandora en una misión única de exploración.</p>
+             <div class="pelicula">
+        <img src="images/avatar.png" alt="Avatar">
+
+        <div class="pelicula-info">
+            <span class="genero">Ciencia Ficción</span>
+            <h3>Avatar</h3>
+            <p>Un exmarine viaja al planeta Pandora en una misión única de exploración.</p>
+
+            <div class="botones-pelicula">
+                <button class="btn-comprar">Comprar</button>
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'Avatar',
+                    'images/avatar.png',
+                    'https://www.youtube.com/embed/5PSNL1qE6VY',
+                    'Un exmarine viaja al planeta Pandora en una misión única de exploración.'
+                )">
+                    Ver detalles
+                </button>
             </div>
+        </div>
+    </div>
 
             <div class="pelicula">
                 <img src="images/spiderman.png" alt="Spiderman">
