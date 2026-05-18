@@ -1073,30 +1073,33 @@ grid-template-columns: 1fr;
     }
 }
 
-/* ===== EFECTO BRILLO ===== */
-.cine-card::before,
-.promo-box::before{
-    content:"";
-    position:absolute;
-    top:-100%;
-    left:-100%;
-    width:200%;
-    height:200%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.08),
-        transparent
-    );
-    transform: rotate(25deg);
-    transition: 0.6s;
-    pointer-events:none;
+/* =============================== */
+/* HOVER LIMPIO TIPO CINE PREMIUM */
+/* =============================== */
+
+.cine-card,
+.promo-box{
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.cine-card:hover::before,
-.promo-box:hover::before{
-    top:0;
-    left:0;
+/* Hover elegante (sin brillos encima) */
+.cine-card:hover,
+.promo-box:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6),
+                0 0 18px rgba(255,0,0,0.15);
+}
+
+/* Imagen más suave al hover */
+.cine-card img,
+.promo-box img{
+    transition: transform 0.4s ease;
+}
+
+.cine-card:hover img,
+.promo-box:hover img{
+    transform: scale(1.05);
 }
 
 /* ===================================================== */
