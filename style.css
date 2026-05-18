@@ -1361,16 +1361,6 @@ body::before{
     filter: blur(2px);
     z-index:-2;
 }
-
-/* ===== HEADER TIPO NETFLIX ===== */
-.header{
-    background: rgba(42, 15, 19, 0.6);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
 /* ===== SECCIONES MAS COMPACTAS ===== */
 .cine-section,
 .promo-section{
