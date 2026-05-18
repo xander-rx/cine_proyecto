@@ -1052,10 +1052,55 @@ grid-template-columns: 1fr;
 
 
 
+/* ===================================================== */
+/* =============== CINES + PROMOCIONES ============ */
+/* ===================================================== */
 
+/* ===== ANIMACION GENERAL ===== */
+.cine-card,
+.promo-box{
+    animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== EFECTO BRILLO ===== */
+.cine-card::before,
+.promo-box::before{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:200%;
+    height:200%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.6s;
+    pointer-events:none;
+}
+
+.cine-card:hover::before,
+.promo-box:hover::before{
+    top:0;
+    left:0;
+}
 
 /* ===================================================== */
-/* =============== C I N E S (SEGURO) ================== */
+/* ===================== CINES ========================= */
 /* ===================================================== */
 
 .cine-section{
@@ -1077,60 +1122,70 @@ grid-template-columns: 1fr;
 
 .cine-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
     gap: 30px;
 }
 
-/* CARD DE CINES (NO AFECTA OTRAS .card) */
 .cine-card{
-    background: linear-gradient(160deg, #2a0f13, #111);
-    border-radius: 18px;
+    position: relative;
     overflow: hidden;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px);
     border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 0 18px rgba(255,0,0,0.08);
     transition: 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .cine-card:hover{
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px);
     box-shadow: 0 0 25px rgba(255,0,0,0.35);
 }
 
 .cine-card img{
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.cine-card:hover img{
+    transform: scale(1.06);
 }
 
 .cine-card h3{
-    margin-top: 15px;
+    margin-top: 18px;
     color: #fff;
+    font-size: 22px;
 }
 
 .cine-card p{
-    color: #ccc;
-    margin: 8px 0;
+    color: #d4d4d4;
+    margin: 10px 20px;
 }
 
 .cine-card button{
     margin: 20px;
-    padding: 12px 18px;
+    width: calc(100% - 40px);
+    padding: 13px;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     background: linear-gradient(90deg,#722F37,#ff4d4d);
     color: white;
-    cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
 }
 
 .cine-card button:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255,0,0,0.4);
+    transform: scale(1.04);
+    box-shadow: 0 0 15px rgba(255,0,0,0.45);
 }
 
 /* ===================================================== */
-/* ============ P R O M O C I O N E S ================== */
+/* ================= PROMOCIONES ======================= */
 /* ===================================================== */
 
 .promo-section{
@@ -1141,8 +1196,8 @@ grid-template-columns: 1fr;
 .promo-main-title{
     font-size: 42px;
     color: #ff4d4d;
-    letter-spacing: 4px;
     margin-bottom: 10px;
+    letter-spacing: 4px;
 }
 
 .promo-main-subtitle{
@@ -1152,77 +1207,88 @@ grid-template-columns: 1fr;
 
 .promo-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
     gap: 30px;
 }
 
-/* CARD PROMOCIONES (NO TOCA OTRAS CLASES) */
 .promo-box{
-    background: linear-gradient(160deg, #2a0f13, #111);
-    border-radius: 18px;
+    position: relative;
     overflow: hidden;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px);
     border: 1px solid rgba(255,255,255,0.08);
     transition: 0.4s ease;
-    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .promo-box:hover{
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px);
     box-shadow: 0 0 25px rgba(255,0,0,0.35);
 }
 
 .promo-box img{
     width: 100%;
-    height: 220px;
+    height: 230px;
     object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.promo-box:hover img{
+    transform: scale(1.06);
 }
 
 .promo-box h3{
-    margin-top: 15px;
+    margin-top: 18px;
     color: #fff;
+    font-size: 22px;
 }
 
 .promo-box p{
-    color: #ccc;
-    padding: 0 15px;
-    margin: 10px 0;
+    color: #d4d4d4;
+    margin: 10px 20px;
 }
 
 .promo-box span{
-    color: #ff4d4d;
-    font-size: 20px;
+    display: inline-block;
+    margin: 10px 0 15px;
+    background: #ff3131;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
     font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
 }
 
 .promo-box button{
-    margin: 15px;
-    width: calc(100% - 30px);
-    padding: 12px;
+    width: calc(100% - 40px);
+    margin: 0 20px 25px;
+    padding: 13px;
     border: none;
-    border-radius: 8px;
-    background: linear-gradient(90deg,#722F37,#ff4d4d);
-    color: white;
+    border-radius: 30px;
+    background: white;
+    color: #ff3131;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
 }
 
 .promo-box button:hover{
+    background: #ff3131;
+    color: white;
     transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(255,0,0,0.4);
 }
 
-/* TAG PROMO */
+/* TAG */
 .promo-tag{
     position: absolute;
     top: 12px;
     right: 12px;
-    background: #ff1e1e;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
+    background: gold;
+    color: black;
+    padding: 6px 14px;
+    border-radius: 30px;
     font-size: 12px;
     font-weight: bold;
 }
@@ -1231,7 +1297,7 @@ grid-template-columns: 1fr;
 /* ================= RESPONSIVE ======================== */
 /* ===================================================== */
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
     .cine-section,
     .promo-section{
@@ -1242,5 +1308,22 @@ grid-template-columns: 1fr;
     .promo-main-title{
         font-size: 30px;
     }
+
+    .cine-card h3,
+    .promo-box h3{
+        font-size: 20px;
+    }
 }
 
+@media (max-width:480px){
+
+    .cine-title,
+    .promo-main-title{
+        font-size: 24px;
+    }
+
+    .cine-card p,
+    .promo-box p{
+        font-size: 14px;
+    }
+}
