@@ -1327,3 +1327,188 @@ grid-template-columns: 1fr;
         font-size: 14px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ===== BODY CINEMATOGRAFICO ===== */
+body{
+    background:
+        radial-gradient(circle at top, rgba(114,47,55,0.25), transparent 40%),
+        radial-gradient(circle at bottom, rgba(255,0,0,0.08), transparent 50%),
+        linear-gradient(to bottom, #0f0f0f, #141414);
+}
+
+/* fondo tipo pelicula suave */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=60")
+        center/cover no-repeat;
+    opacity:0.05;
+    filter: blur(2px);
+    z-index:-2;
+}
+
+/* ===== HEADER TIPO NETFLIX ===== */
+.header{
+    background: rgba(42, 15, 19, 0.6);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ===== SECCIONES MAS COMPACTAS ===== */
+.cine-section,
+.promo-section{
+    padding: 50px 30px 60px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* luz cinematica suave */
+.cine-section::before,
+.promo-section::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background: radial-gradient(circle, rgba(255,0,0,0.08), transparent 70%);
+    top:-200px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:-1;
+    pointer-events:none;
+}
+
+/* ===== TITULOS ===== */
+.cine-title,
+.promo-main-title{
+    font-size: 38px;
+    color: #ff4d4d;
+    letter-spacing: 3px;
+}
+
+.cine-subtitle,
+.promo-main-subtitle{
+    color:#ccc;
+    margin-bottom:40px;
+}
+
+/* ===== ANIMACION ENTRADA ===== */
+.cine-card,
+.promo-box{
+    animation: fadeUp 0.7s ease both;
+    will-change: transform;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== EFECTO BRILLO ===== */
+.cine-card::before,
+.promo-box::before{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:200%;
+    height:200%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.6s;
+    pointer-events:none;
+}
+
+.cine-card:hover::before,
+.promo-box:hover::before{
+    top:0;
+    left:0;
+}
+
+/* ===== HOVER GENERAL ===== */
+.cine-card:hover,
+.promo-box:hover{
+    transform: translateY(-10px) scale(1.02);
+    transition: 0.35s ease;
+}
+
+/* ===== IMAGENES ===== */
+.cine-card img,
+.promo-box img{
+    transition: 0.4s ease;
+}
+
+.cine-card:hover img,
+.promo-box:hover img{
+    transform: scale(1.06);
+}
+
+/* ===== BOTONES ===== */
+.cine-card button,
+.promo-box button{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== SOMBRA PREMIUM ===== */
+.cine-card,
+.promo-box{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5),
+                0 0 20px rgba(255,0,0,0.06);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+
+    .cine-section,
+    .promo-section{
+        padding: 40px 15px;
+    }
+
+    .cine-title,
+    .promo-main-title{
+        font-size: 28px;
+    }
+}
+
+@media (max-width:480px){
+
+    .cine-title,
+    .promo-main-title{
+        font-size: 24px;
+    }
+
+    .cine-card p,
+    .promo-box p{
+        font-size: 14px;
+    }
+}
