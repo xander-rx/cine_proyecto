@@ -54,16 +54,65 @@
     </header>
 
     <main>
-        <!-- hero, baner principal  y slogan-->
-            <section class="hero">
-                <h2>Vive la Experiencia del Cine</h2>
-                <p>Consulta la cartelera, encuentra tu sede más cercana y aprovecha nuestras promociones exclusivas.</p>
-                <div class="hero-botones">
-                    <a href="peliculas.html" class="btn-cartelera">Ver Cartelera</a>
-            </section>
 
-            <!--Div para tarjetas de pelicula (imagen, etiqueta, genero, etc)-->
-            <section class="catalogo">
+        <!--CARRUSEL AUTOMATICO : Usa animacion CSS con @keyframes-->
+        <section class="carrusel">
+
+            <!-- Slide 1: Pelicula Spider-Man -->
+            <div class="slide slide-1">
+                <div class="slide-contenido">
+                    <span class="slide-badge">🎬 Ahora en Cartel</span>
+                    <h2>Spider-Man</h2>
+                    <p>El joven superhéroe protege Nueva York de sus enemigos más temibles. Una aventura que no te puedes perder.</p>
+                    <a href="peliculas.html" class="btn-slide">Ver Cartelera</a>
+                </div>
+                <div class="slide-imagen">
+                    <img src="images/spiderman.png" alt="Spider-Man">
+                </div>
+            </div>
+
+            <!-- Slide 2: Nueva sede en Callao -->
+            <div class="slide slide-2">
+                <div class="slide-contenido">
+                    <span class="slide-badge">📍 Nueva Apertura</span>
+                    <h2>Nueva Sede Callao</h2>
+                    <p>¡Abrimos puertas en el Callao! Salas IMAX, 3D y VIP esperan por ti. Ven y vive la experiencia CinePlus.</p>
+                    <a href="cines.html" class="btn-slide">Ver Sedes</a>
+                </div>
+                <div class="slide-decoracion">
+                    <span class="slide-icon">🎬</span>
+                </div>
+            </div>
+
+            <!-- Slide 3: Promo de parejas -->
+            <div class="slide slide-3">
+                <div class="slide-contenido">
+                    <span class="slide-badge">❤️ Promo Especial</span>
+                    <h2>Promo Parejas</h2>
+                    <p>2 entradas + combo romántico con 15% de descuento. Palomitas, bebidas y la mejor pelicula para los dos.</p>
+                    <a href="promociones.html" class="btn-slide">Ver Promoción</a>
+                </div>
+                <div class="slide-decoracion">
+                    <span class="slide-icon">🍿</span>
+                </div>
+            </div>
+
+            <!-- Puntos indicadores: se animan en sincronía con los slides -->
+            <div class="carrusel-dots">
+                <span class="dot dot-1"></span>
+                <span class="dot dot-2"></span>
+                <span class="dot dot-3"></span>
+            </div>
+
+        </section>
+
+
+        <!-- SECCION: PELICULAS DESTACADAS-->
+        <h2 class="seccion-titulo">🎬 Películas Destacadas</h2>
+
+        <section class="catalogo">
+
+            <!-- Tarjeta: Avatar -->
             <div class="pelicula">
                 <img src="images/avatar.png" alt="Avatar">
                 <span class="genero">Ciencia Ficción</span>
@@ -71,6 +120,7 @@
                 <p>Un exmarine viaja al planeta Pandora en una misión única.</p>
             </div>
 
+            <!-- Tarjeta: Spider-Man -->
             <div class="pelicula">
                 <img src="images/spiderman.png" alt="Spiderman">
                 <span class="genero">Acción</span>
@@ -78,6 +128,7 @@
                 <p>El joven superhéroe protege Nueva York de sus enemigos.</p>
             </div>
 
+            <!-- Tarjeta: Frozen -->
             <div class="pelicula">
                 <img src="images/frozen.png" alt="Frozen">
                 <span class="genero">Animación</span>
@@ -85,13 +136,15 @@
                 <p>La magia del reino de Arendelle en una aventura helada.</p>
             </div>
 
+            <!-- Tarjeta: Jurassic World -->
             <div class="pelicula">
                 <img src="images/jurassic.png" alt="Jurassic World">
                 <span class="genero">Aventura</span>
                 <h3>Jurassic World</h3>
                 <p>Los dinosaurios vuelven a dominar la tierra en este parque.</p>
             </div>
-            </section>
+
+        </section>
 
     </main>
 
