@@ -310,21 +310,33 @@
         </div>
     </div>
 </div>
-<!-- SCRIPT -->
+
 <script>
 
-function mostrarDetalles(titulo, imagenes, trailer, descripcion) {
+
+
+function mostrarDetalles(titulo, imagen, trailer, descripcion) {
+
     document.getElementById("titulo-pelicula").innerText = titulo;
-    document.getElementById("imagenes-pelicula").src = imagenes;
+
+    document.getElementById("imagenes-pelicula").src = imagen;
+
     document.getElementById("trailer").src = trailer;
+
     document.getElementById("descripcion-pelicula").innerText = descripcion;
-    document.getElementById("modal").style.display = "flex";
+
+    document.getElementById("modal").style.display = "block";
 }
 
 function cerrarModal() {
-   document.getElementById("modal").style.display = "none";
+
+    document.getElementById("modal").style.display = "none";
+
     document.getElementById("trailer").src = "";
 }
+
+</script>
+
 
 </script>
             
@@ -362,6 +374,47 @@ function cerrarModal() {
             <p>© 2026 CinePlus - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <!-- MODAL -->
+<div id="modal" class="modal">
+
+    <span class="cerrar" onclick="cerrarModal()">
+        &times;
+    </span>
+
+    <div class="modal-contenido">
+
+        <div class="contenedor-trailer">
+
+            <iframe
+                id="trailer"
+                src=""
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <div class="detalle-info">
+
+            <img id="imagenes-pelicula" src="" alt="">
+
+            <div class="detalle-texto">
+
+                <h2 id="titulo-pelicula"></h2>
+
+                <h3>Sinopsis</h3>
+
+                <p id="descripcion-pelicula"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 </body>
 
