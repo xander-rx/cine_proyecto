@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas - CinePlus</title>
+    <link rel="icon" href="images/icon_cineplus.png">
+    <!--
+        Se corrige la ruta del CSS: antes usaba css/estilos.css (ruta incorrecta)
+        Ahora apunta directamente a style.css en la raiz del proyecto
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--
+        Header igual al de index.html
+        Divido en clases para poder trabajar el style.css
+        header_logos -> Se usa para el logo y letras de la pagina
+        Se crea un nav que redirecciona a otras paginas
+    -->
+    <header class="header">
+        <a href="index.html" class="logo-link">
+            <div class="header_logo">
+                <img src="images/icon_cineplus.png" alt="Logo CinePlus">
+            </div>
+            <div>
+                <h1 class="header_title">CinePlus</h1>
+            </div>
+        </a>
+
+        <!--
+            Apartado del header que se usara para navegar entre paginas <nav>
+        -->
+        <div>
+            <nav class="nav">
+                <a href="peliculas.html">Películas</a>
+                <a href="cines.html">Cines</a>
+                <a href="promociones.html">Promociones</a>
+                <a href="dulceria.html">Dulcería</a>
+            </nav>
+        </div>
+
+        <!--
+            Apartado de Buscar y Loguear/Registrarse
+        -->
+        <div class="header_acciones">
+            <a href="login.html" class="icon_usuario">
+                <img src="images/Imagen1.png" alt="Usuario">
+            </a>
+            <a href="buscador.html" class="icon_buscador">
+                <img src="images/buscador.png" alt="Buscar">
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!--
+            Titulo de la seccion de peliculas
+        -->
+        <h2 class="seccion-titulo">Cartelera <span>de Películas</span></h2>
+        <p class="seccion-subtitulo">Todas las películas disponibles en CinePlus</p>
+
+        <!--
+            Catalogo de peliculas: grid de tarjetas
+            Cada tarjeta tiene: poster, genero, titulo y descripcion
+            NOTA: Se corrige la ruta de las imagenes
+                  Antes: imagen/avatar.png (incorrecto)
+                  Ahora: images/avatar.png (correcto)
+        -->
+        <section class="catalogo">
+
+             <div class="pelicula">
+        <img src="images/avatar.png" alt="Avatar">
+
+        <div class="pelicula-info">
+            <span class="genero">Ciencia Ficción</span>
+            <h3>Avatar</h3>
+            <p>Un exmarine viaja al planeta Pandora en una misión única de exploración.</p>
+
+            <div class="botones-pelicula">
+                <button class="btn-comprar">Comprar</button>
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'Avatar',
+                    'images/avatar.png',
+                    'https://www.youtube.com/embed/5PSNL1qE6VY',
+                    'Un exmarine viaja al planeta Pandora en una misión única de exploración.'
+                )">
+                    Ver detalles
+                </button>
+            </div>
+        </div>
+    </div>
+
+             <div class="pelicula">
+        <img src="images/spiderman.png" alt="Spiderman">
+
+        <div class="pelicula-info">
+            <span class="genero">Acción</span>
+            <h3>Spider-Man</h3>
+            <p>El joven Peter Parker protege Nueva York con sus poderes de araña.</p>
+
+            <div class="botones-pelicula">
+                <button class="btn-comprar">Comprar</button>
+
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'Spider-Man',
+                    'images/spiderman.png',
+                    'https://www.youtube.com/embed/t06RUxPbp_c',
+                    'Peter Parker protege Nueva York enfrentando peligrosos enemigos.'
+                )">
+                    Ver detalles
+                </button>
+            </div>
+        </div>
+    </div>
+
+            <div class="pelicula">
+        <img src="images/frozen.png" alt="Frozen">
+
+        <div class="pelicula-info">
+            <span class="genero">Animación</span>
+            <h3>Frozen</h3>
+            <p>La princesa Elsa controla la magia del hielo en el reino de Arendelle.</p>
+
+            <div class="botones-pelicula">
+                <button class="btn-comprar">Comprar</button>
+
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'Frozen',
+                    'images/frozen.png',
+                    'https://www.youtube.com/embed/TbQm5doF_Uc',
+                    'Elsa descubre el poder de su magia mientras protege a su reino.'
+                )">
+                    Ver detalles
+                </button>
+            </div>
+        </div>
+    </div>
+
+            <div class="pelicula">
+        <img src="images/jurassic.png" alt="Jurassic World">
+
+        <div class="pelicula-info">
+            <span class="genero">Aventura</span>
+            <h3>Jurassic World</h3>
+            <p>Los dinosaurios son recreados en un espectacular parque temático.</p>
+
+            <div class="botones-pelicula">
+                <button class="btn-comprar">Comprar</button>
+
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'Jurassic World',
+                    'images/jurassic.png',
+                    'https://www.youtube.com/embed/RFinNxS5KN4',
+                    'Un parque de dinosaurios se convierte en una peligrosa aventura.'
+                )">
+                    Ver detalles
+                </button>
+            </div>
+        </div>
+    </div>
+            
+         <div class="pelicula">
+        <img src="images/batman.png" alt="Batman">
+
+        <div class="pelicula-info">
+            <span class="genero">Acción</span>
+            <h3>The Batman</h3>
+            <p>Un joven Batman investiga crímenes en Gotham.</p>
+
+            <div class="botones-pelicula">
+                <button class="btn-comprar">Comprar</button>
+
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'The Batman',
+                    'images/batman.png',
+                    'https://www.youtube.com/embed/mqqft2x_Aa4',
+                    'Batman enfrenta nuevos enemigos mientras investiga Gotham.'
+                )">
+                    Ver detalles
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+       <div class="pelicula">
+    <img src="images/avengers.png" alt="Avengers">
+
+    <div class="pelicula-info">
+        <span class="genero">Acción</span>
+
+        <h3>Avengers</h3>
+        <p>Los héroes más poderosos de la Tierra se unen para salvar el mundo.</p>
+
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Avengers',
+                'images/avengers.png',
+                'https://www.youtube.com/embed/eOrNdBpGMv8',
+                'Los héroes más poderosos de la Tierra se unen para enfrentar una gran amenaza.'
+            )">
+
+                Ver detalles
+            </button>
+       </div>
+    </div>
+</div>
+
+
+        <div class="pelicula">
+    <img src="images/titanic.png" alt="Titanic">
+
+    <div class="pelicula-info">
+        <span class="genero">Romance</span>
+
+        <h3>Titanic</h3>
+        <p>Una historia de amor que surge a bordo del famoso barco Titanic.</p>
+
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Titanic',
+                'images/titanic.png',
+                'https://www.youtube.com/embed/kVrqfYjkTdQ',
+                'Jack y Rose viven una inolvidable historia de amor a bordo del Titanic.'
+            )">
+
+                Ver detalles
+            </button>
+        </div>
+    </div>
+</div>
+
+
+        <div class="pelicula">
+    <img src="images/harrypotter.png" alt="Harry Potter">
+
+    <div class="pelicula-info">
+        <span class="genero">Fantasía</span>
+
+        <h3>Harry Potter</h3>
+        <p>Un joven mago descubre su destino en el mundo de la magia.</p>
+
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Harry Potter',
+                'images/harrypotter.png',
+                'https://www.youtube.com/embed/VyHV0BRtdxo',
+                'Harry Potter descubre el mundo mágico y enfrenta grandes desafíos.'
+            )">
+
+                Ver detalles
+            </button>
+        </div>
+    </div>
+</div>
+
+        <div class="pelicula">
+    <img src="images/fastfurious.png" alt="Rápidos y Furiosos">
+
+    <div class="pelicula-info">
+        <span class="genero">Acción</span>
+
+        <h3>Rápidos y Furiosos</h3>
+        <p>Carreras ilegales y acción al límite en las calles.</p>
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Rápidos y Furiosos',
+                'images/fastfurious.png',
+                'https://www.youtube.com/embed/2TAOizOnNPo',
+                'Dominic Toretto y su equipo viven intensas carreras y misiones peligrosas.'
+            )">
+
+                Ver detalles
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+function mostrarDetalles(titulo, imagen, trailer, descripcion) {
+
+    document.getElementById("titulo-pelicula").innerText = titulo;
+
+    document.getElementById("imagenes-pelicula").src = imagen;
+
+    document.getElementById("trailer").src = trailer;
+
+    document.getElementById("descripcion-pelicula").innerText = descripcion;
+
+    document.getElementById("modal").style.display = "block";
+}
+
+function cerrarModal() {
+
+    document.getElementById("modal").style.display = "none";
+
+    document.getElementById("trailer").src = "";
+}
+
+</script>
+
+
+</script>
+            
+        </section>
+
+    </main>
+
+    <!--
+        Footer igual al de index.html
+        Dividido en: descripcion, contacto y redes sociales
+    -->
+    <footer class="footer_index">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>CinePlus</h3>
+                <p>Tu experiencia de cine favorita</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>📞 (01) 123 4567</p>
+                <p>✉️ contacto@cineplus.com</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 CinePlus - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+<div id="modal" class="modal">
+
+    <span class="cerrar" onclick="cerrarModal()">
+        &times;
+    </span>
+
+    <div class="modal-contenido">
+
+        <div class="contenedor-trailer">
+
+            <iframe
+                id="trailer"
+                src=""
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <div class="detalle-info">
+
+            <img id="imagenes-pelicula" src="" alt="">
+
+            <div class="detalle-texto">
+
+                <h2 id="titulo-pelicula"></h2>
+
+                <h3>Sinopsis</h3>
+
+                <p id="descripcion-pelicula"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
