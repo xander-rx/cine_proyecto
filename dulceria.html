@@ -7,157 +7,233 @@
     <title>Dulcería - CinePlus</title>
 
     <link rel="icon" href="images/icon_cineplus.png">
-
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fuente para unificar con promociones -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header class="header">
         <a href="index.html" class="logo-link">
             <div class="header_logo">
                 <img src="images/icon_cineplus.png" alt="Logo CinePlus">
             </div>
-            <div>
-                <h1 class="header_title">CinePlus</h1>
-            </div>
+            <h1 class="header_title">CinePlus</h1>
         </a>
 
-        <div>
-            <nav class="nav">
-                <a href="peliculas.html">Películas</a>
-                <a href="cines.html">Cines</a>
-                <a href="promociones.html">Promociones</a>
-                <a href="dulceria.html">Dulcería</a>
-            </nav>
-        </div>
+        <nav class="nav">
+            <a href="peliculas.html">Películas</a>
+            <a href="cines.html">Cines</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="dulceria.html">Dulcería</a>
+        </nav>
 
         <div class="header_acciones">
-            <a href="login.html" class="icon_usuario">
+            <a href="login.html">
                 <img src="images/Imagen1.png" alt="Usuario">
             </a>
-            <a href="buscador.html" class="icon_buscador">
+            <a href="buscar.html">
                 <img src="images/buscador.png" alt="Buscar">
             </a>
         </div>
     </header>
 
+    <!-- MAIN - DULCERÍA -->
+    <main>
+        <section class="dulceria-section">
+            <h2 class="dulceria-main-title">DULCERÍA</h2>
+            <p class="dulceria-main-subtitle">Disfruta de nuestros combos y snacks</p>
 
-    <main class="dulceria">
-
-        <div class="dulceri-contenedor">
+            <!-- MENÚ DE FILTROS -->
             <div class="dulceria-menu">
-                <button data-seccion="bebidas">Bebidas</button><br>
+                <button type="button" data-seccion="bebidas" class="menu-btn active">🍹 Bebidas</button>
+                <button type="button" data-seccion="canchitas" class="menu-btn">🍿 Canchitas</button>
+                <button type="button" data-seccion="combos2" class="menu-btn">🍽️ Combos para uno</button>
+                <button type="button" data-seccion="combosCompartir" class="menu-btn">👥 Combos para compartir</button>
+                <button type="button" data-seccion="complementos" class="menu-btn">🍫 Complementos</button>
+            </div>
 
-                <button data-seccion="canchitas">Canchitas</button><br>
+            <!-- GRID DE PRODUCTOS -->
+            <div class="dulceria-grid" id="dulceriaGrid">
 
-                <button data-seccion="combos2">Combos para uno</button><br>
+                <!-- ========== BEBIDAS ========== -->
+                <div class="dulceria-card" data-categoria="bebidas">
+                    <div class="dulceria-img-container">
+                        <img src="images/b-grande.png" alt="Bebida grande">
+                    </div>
+                    <h3>BEBIDA GRANDE</h3>
+                    <p class="descripcion">Refresco de 1 litro.<br>*Sabor sujeto a stock</p>
+                    <span class="precio-dulce">S/ 12.00</span>
+                    <button class="btn-dulceria" data-nombre="BEBIDA GRANDE" data-precio="12.00">Agregar al carrito</button>
+                </div>
 
-                <button data-seccion="combosCompartir">Combos para compartir</button><br>
+                <div class="dulceria-card" data-categoria="bebidas">
+                    <div class="dulceria-img-container">
+                        <img src="images/bebida-mediana.png" alt="Bebida mediana">
+                    </div>
+                    <h3>BEBIDA MEDIANA</h3>
+                    <p class="descripcion">Refresco de 500 ml.<br>*Sabor sujeto a stock</p>
+                    <span class="precio-dulce">S/ 8.00</span>
+                    <button class="btn-dulceria" data-nombre="BEBIDA MEDIANA" data-precio="8.00">Agregar al carrito</button>
+                </div>
 
-                <button data-seccion="complementos">Complementos</button>
+                <!-- ========== CANCHITAS ========== -->
+                <div class="dulceria-card" data-categoria="canchitas">
+                    <div class="dulceria-img-container">
+                        <img src="images/cancha-grande.png" alt="Canchita gigante">
+                    </div>
+                    <h3>CANCHITA GIGANTE</h3>
+                    <p class="descripcion">Canchita gigante con mantequilla.<br>*Sin refill</p>
+                    <span class="precio-dulce">S/ 17.00</span>
+                    <button class="btn-dulceria" data-nombre="CANCHITA GIGANTE" data-precio="17.00">Agregar al carrito</button>
+                </div>
 
-            </div> <br><br><br><br>
+                <div class="dulceria-card" data-categoria="canchitas">
+                    <div class="dulceria-img-container">
+                        <img src="images/cancha-med.png" alt="Canchita mediana">
+                    </div>
+                    <h3>CANCHITA MEDIANA</h3>
+                    <p class="descripcion">Canchita mediana con mantequilla.<br>*Sin refill</p>
+                    <span class="precio-dulce">S/ 12.00</span>
+                    <button class="btn-dulceria" data-nombre="CANCHITA MEDIANA" data-precio="12.00">Agregar al carrito</button>
+                </div>
 
-            <table class="dulceria-tabla">
-                <tr>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/b-grande.png" alt="Bebida grande" width="120">
-                        </div>
-                        <p class="nombre">BEBIDA GRANDE</p>
-                        <p class="precio">S/ 12.00</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/bebida-mediana.png" alt="Bebida mediana" width="120">
-                        </div>
-                        <p class="nombre">BEBIDA MEDIANA</p>
-                        <p class="precio">S/ 8.00</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/cancha-grande.png" alt="Canchita grande" width="120">
-                        </div>
-                        <p class="nombre">CANCHITA GRANDE</p>
-                        <p class="precio">S/ 17.00</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/choco.png" alt="M&M's" width="120">
-                        </div>
-                        <p class="nombre">CHOCO</p>
-                        <p class="precio">S/ 3.50</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                <tr>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/comboP1.png" alt="Combo para uno" width="120">
-                        </div>
-                        <p class="nombre">COMBO PERSONAL 1</p>
-                        <p class="precio">S/ 15.00</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/comboFamiliar.png" alt="Combo compartir" width="120">
-                        </div>
-                        <p class="nombre">COMBO FAMILIAR</p>
-                        <p class="precio">S/ 27.00</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/hot dog.png" alt="Dulce 2" width="120">
-                        </div>
-                        <p class="nombre">HOT DOG</p>
-                        <p class="precio">S/ 6.50</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                    <td class="producto-card">
-                        <div class="marco">
-                            <img src="images/Nachos.png" alt="Dulce 3" width="120">
-                        </div>
-                        <p class="nombre">NACHOS CON QUESO</p>
-                        <p class="precio">S/ 11.50</p>
-                        <button class="btn-carrito">Agregar al carrito</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
+                <!-- ========== COMBOS PARA UNO ========== -->
+                <div class="dulceria-card" data-categoria="combos2">
+                    <div class="dulceria-img-container">
+                        <img src="images/comboP1.png" alt="Combo 1">
+                    </div>
+                    <h3>COMBO 1</h3>
+                    <p class="descripcion">1 Canchita Mediana + 1 Bebida Pequeña.<br>*Sabor sujeto a stock</p>
+                    <span class="precio-dulce">S/ 24.50</span>
+                    <button class="btn-dulceria" data-nombre="COMBO 1" data-precio="24.50">Agregar al carrito</button>
+                </div>
+
+                <!-- ========== COMBOS PARA COMPARTIR ========== -->
+                <div class="dulceria-card" data-categoria="combosCompartir">
+                    <div class="dulceria-img-container">
+                        <img src="images/comboFamiliar.png" alt="Combo familiar">
+                    </div>
+                    <h3>COMBO FAMILIAR</h3>
+                    <p class="descripcion">1 Canchita Gigante + 4 Bebidas Grandes.<br>*Sabor sujeto a stock</p>
+                    <span class="precio-dulce">S/ 46.00</span>
+                    <button class="btn-dulceria" data-nombre="COMBO FAMILIAR" data-precio="46.00">Agregar al carrito</button>
+                </div>
+
+                <!-- ========== COMPLEMENTOS (Nachos, Hot Dog, Chocolate) ========== -->
+                <div class="dulceria-card" data-categoria="complementos">
+                    <div class="dulceria-img-container">
+                        <img src="images/Nachos.png" alt="Nachos con queso">
+                    </div>
+                    <h3>NACHOS CON QUESO</h3>
+                    <p class="descripcion">Nachos crujientes + salsa queso cheddar.<br>*Para compartir</p>
+                    <span class="precio-dulce">S/ 11.50</span>
+                    <button class="btn-dulceria" data-nombre="NACHOS CON QUESO" data-precio="11.50">Agregar al carrito</button>
+                </div>
+
+                <div class="dulceria-card" data-categoria="complementos">
+                    <div class="dulceria-img-container">
+                        <img src="images/hot dog.png" alt="Hot dog especial">
+                    </div>
+                    <h3>HOT DOG ESPECIAL</h3>
+                    <p class="descripcion">Pan con salchicha + papas rústicas.<br>*Salsas incluidas</p>
+                    <span class="precio-dulce">S/ 6.50</span>
+                    <button class="btn-dulceria" data-nombre="HOT DOG ESPECIAL" data-precio="6.50">Agregar al carrito</button>
+                </div>
+
+                <div class="dulceria-card" data-categoria="complementos">
+                    <div class="dulceria-img-container">
+                        <img src="images/choco.png" alt="M&M's chocolate">
+                    </div>
+                    <h3>M&M'S CHOCOLATE</h3>
+                    <p class="descripcion">Chocolate crujiente 80gr.<br>*Producto importado</p>
+                    <span class="precio-dulce">S/ 3.50</span>
+                    <button class="btn-dulceria" data-nombre="M&M'S CHOCOLATE" data-precio="3.50">Agregar al carrito</button>
+                </div>
+
+            </div>
+        </section>
     </main>
 
+    <!-- NOTIFICACIÓN TOAST (esquina bonita) -->
+    <div id="toast-notification" class="toast-notification">
+        <div class="toast-icon">🍿</div>
+        <div class="toast-message">
+            <strong>¡Agregado al carrito!</strong>
+            <span id="toast-producto"></span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer_index">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>CinePlus</h3>
+                <p>Tu experiencia de cine favorita</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>📞 (01) 123 4567</p>
+                <p>✉️ contacto@cineplus.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CinePlus - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA FILTROS Y NOTIFICACIÓN BONITA -->
+    <script>
+        // Filtros por categoría
+        const buttons = document.querySelectorAll('.menu-btn');
+        const cards = document.querySelectorAll('.dulceria-card');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const categoria = btn.getAttribute('data-seccion');
+                cards.forEach(card => {
+                    if (categoria === card.getAttribute('data-categoria')) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // NOTIFICACIÓN TOAST (bonita, en esquina)
+        const toast = document.getElementById('toast-notification');
+        const toastProducto = document.getElementById('toast-producto');
+
+        function showToast(productoNombre, productoPrecio) {
+            toastProducto.innerHTML = `${productoNombre} - S/ ${productoPrecio}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // Agregar evento a todos los botones de carrito
+        document.querySelectorAll('.btn-dulceria').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const nombre = btn.getAttribute('data-nombre');
+                const precio = btn.getAttribute('data-precio');
+                showToast(nombre, precio);
+            });
+        });
+    </script>
 </body>
-
-<footer class="footer_index">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>CinePlus</h3>
-            <p>Tu experiencia de cine favorita</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Contacto</h4>
-            <p>📞 (01) 123 4567</p>
-            <p>✉️ contacto@cineplus.com</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Síguenos</h4>
-            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 CinePlus - Todos los derechos reservados</p>
-    </div>
-</footer>
-
 
 </html>
