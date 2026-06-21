@@ -32,6 +32,8 @@
             </div>
         </a>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
         <!--
             Apartado del header que se usara para navegar entre paginas <nav>
         -->
@@ -65,6 +67,33 @@
         <h2 class="seccion-titulo">Cartelera <span>de Películas</span></h2>
         <p class="seccion-subtitulo">Todas las películas disponibles en CinePlus</p>
 
+        <!-- Filtro de cine: filtra que peliculas se muestran segun la sede elegida -->
+        <div class="filtro-cine">
+            <label for="selectCine">📍 Selecciona tu cine:</label>
+            <select id="selectCine" onchange="filtrarPorCine()">
+                <option value="todos">Todas las sedes</option>
+                <option value="ate">CinePlus Ate</option>
+                <option value="lurigancho">CinePlus Lurigancho</option>
+                <option value="surco">CinePlus Surco</option>
+                <option value="sjl">CinePlus San Juan de Lurigancho</option>
+                <option value="olivos">CinePlus Los Olivos</option>
+                <option value="miraflores">CinePlus Miraflores</option>
+                <option value="callao">CinePlus Callao</option>
+                <option value="ves">CinePlus Villa El Salvador</option>
+                <option value="sanborja">CinePlus San Borja</option>
+            </select>
+        </div>
+
+        <!-- Tabs: En Cartelera / Proximos Estrenos -->
+        <div class="tabs-peliculas">
+            <button class="tab-btn activo" onclick="cambiarTab('cartelera', this)">En Cartelera</button>
+            <button class="tab-btn" onclick="cambiarTab('estrenos', this)">Próximos Estrenos</button>
+        </div>
+
+        <p id="mensajeVacio" class="mensaje-vacio" style="display:none;">
+            😕 No hay funciones disponibles en esta sede por ahora.
+        </p>
+
         <!--
             Catalogo de peliculas: grid de tarjetas
             Cada tarjeta tiene: poster, genero, titulo y descripcion
@@ -72,9 +101,9 @@
                   Antes: imagen/avatar.png (incorrecto)
                   Ahora: images/avatar.png (correcto)
         -->
-        <section class="catalogo">
+        <section class="catalogo" id="cartelera">
 
-             <div class="pelicula">
+             <div class="pelicula" data-cines="ate,surco,miraflores,callao,sanborja">
         <img src="images/avatar.png" alt="Avatar">
 
         <div class="pelicula-info">
@@ -93,10 +122,12 @@
                     Ver detalles
                 </button>
             </div>
+
+                <div class="horario-selector" data-horarios="14:00,17:30,20:15"></div>
         </div>
     </div>
 
-             <div class="pelicula">
+             <div class="pelicula" data-cines="ate,lurigancho,surco,sjl,olivos,miraflores,callao,ves,sanborja">
         <img src="images/spiderman.png" alt="Spiderman">
 
         <div class="pelicula-info">
@@ -116,10 +147,12 @@
                     Ver detalles
                 </button>
             </div>
+
+                <div class="horario-selector" data-horarios="13:00,16:00,19:00,22:00"></div>
         </div>
     </div>
 
-            <div class="pelicula">
+            <div class="pelicula" data-cines="surco,miraflores,sanborja,olivos">
         <img src="images/frozen.png" alt="Frozen">
 
         <div class="pelicula-info">
@@ -139,10 +172,12 @@
                     Ver detalles
                 </button>
             </div>
+
+                <div class="horario-selector" data-horarios="12:00,14:30,17:00"></div>
         </div>
     </div>
 
-            <div class="pelicula">
+            <div class="pelicula" data-cines="ate,lurigancho,surco,sjl,callao">
         <img src="images/jurassic.png" alt="Jurassic World">
 
         <div class="pelicula-info">
@@ -162,10 +197,12 @@
                     Ver detalles
                 </button>
             </div>
+
+                <div class="horario-selector" data-horarios="15:00,18:00,21:00"></div>
         </div>
     </div>
             
-         <div class="pelicula">
+         <div class="pelicula" data-cines="ate,surco,miraflores,callao,sanborja">
         <img src="images/batman.png" alt="Batman">
 
         <div class="pelicula-info">
@@ -185,11 +222,13 @@
                     Ver detalles
                 </button>
             </div>
+
+                <div class="horario-selector" data-horarios="16:30,19:30,22:30"></div>
         </div>
     </div>
 
 
-       <div class="pelicula">
+       <div class="pelicula" data-cines="ate,lurigancho,surco,sjl,olivos,miraflores,callao,ves,sanborja">
     <img src="images/avengers.png" alt="Avengers">
 
     <div class="pelicula-info">
@@ -211,11 +250,13 @@
                 Ver detalles
             </button>
        </div>
+
+                <div class="horario-selector" data-horarios="13:30,16:30,19:30,22:15"></div>
     </div>
 </div>
 
 
-        <div class="pelicula">
+        <div class="pelicula" data-cines="surco,miraflores,sanborja">
     <img src="images/titanic.png" alt="Titanic">
 
     <div class="pelicula-info">
@@ -237,11 +278,13 @@
                 Ver detalles
             </button>
         </div>
+
+                <div class="horario-selector" data-horarios="15:30,19:00"></div>
     </div>
 </div>
 
 
-        <div class="pelicula">
+        <div class="pelicula" data-cines="ate,lurigancho,sjl,olivos,ves">
     <img src="images/harrypotter.png" alt="Harry Potter">
 
     <div class="pelicula-info">
@@ -263,10 +306,12 @@
                 Ver detalles
             </button>
         </div>
+
+                <div class="horario-selector" data-horarios="14:00,17:00,20:00"></div>
     </div>
 </div>
 
-        <div class="pelicula">
+        <div class="pelicula" data-cines="ate,lurigancho,sjl,olivos,ves,callao">
     <img src="images/fastfurious.png" alt="Rápidos y Furiosos">
 
     <div class="pelicula-info">
@@ -287,6 +332,8 @@
                 Ver detalles
             </button>
         </div>
+
+                <div class="horario-selector" data-horarios="16:00,19:00,21:30"></div>
     </div>
 </div>
 
@@ -315,10 +362,130 @@ function cerrarModal() {
 }
 
 </script>
+        <!-- Pelicula nueva: Coco 2 (sin poster real aun, usa placeholder) -->
+        <div class="pelicula" data-cines="surco,miraflores,sanborja,olivos,ate">
+            <div class="poster-placeholder">🎭</div>
 
+            <div class="pelicula-info">
+                <span class="genero">Animación</span>
+                <h3>Coco 2</h3>
+                <p>Miguel regresa a la Tierra de los Muertos en una nueva aventura familiar.</p>
 
-</script>
-            
+                <div class="botones-pelicula">
+                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-detalles" onclick="mostrarDetalles(
+                        'Coco 2',
+                        '',
+                        '',
+                        'Miguel regresa a la Tierra de los Muertos en una nueva aventura familiar.'
+                    )">
+                        Ver detalles
+                    </button>
+                </div>
+
+                <div class="horario-selector" data-horarios="13:00,15:30,18:00"></div>
+            </div>
+        </div>
+
+        <!-- Pelicula nueva: John Wick 5 (sin poster real aun, usa placeholder) -->
+        <div class="pelicula" data-cines="ate,lurigancho,sjl,callao,ves">
+            <div class="poster-placeholder">🔫</div>
+
+            <div class="pelicula-info">
+                <span class="genero">Acción</span>
+                <h3>John Wick 5</h3>
+                <p>El asesino más temido del mundo enfrenta su última y más peligrosa misión.</p>
+
+                <div class="botones-pelicula">
+                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-detalles" onclick="mostrarDetalles(
+                        'John Wick 5',
+                        '',
+                        '',
+                        'El asesino más temido del mundo enfrenta su última y más peligrosa misión.'
+                    )">
+                        Ver detalles
+                    </button>
+                </div>
+
+                <div class="horario-selector" data-horarios="16:00,19:00,21:45"></div>
+            </div>
+        </div>
+
+        <!-- Pelicula nueva: Super Mario Bros (sin poster real aun, usa placeholder) -->
+        <div class="pelicula" data-cines="ate,lurigancho,surco,sjl,olivos,miraflores,callao,ves,sanborja">
+            <div class="poster-placeholder">🍄</div>
+
+            <div class="pelicula-info">
+                <span class="genero">Animación</span>
+                <h3>Super Mario Bros</h3>
+                <p>Mario y Luigi viven una aventura sin límites en el Reino Champiñón.</p>
+
+                <div class="botones-pelicula">
+                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-detalles" onclick="mostrarDetalles(
+                        'Super Mario Bros',
+                        '',
+                        '',
+                        'Mario y Luigi viven una aventura sin límites en el Reino Champiñón.'
+                    )">
+                        Ver detalles
+                    </button>
+                </div>
+
+                <div class="horario-selector" data-horarios="11:00,13:30,16:00,18:30"></div>
+            </div>
+        </div>
+
+        </section>
+
+        <!-- Proximos Estrenos: peliculas que aun no se estrenan -->
+        <section class="catalogo" id="estrenos" style="display:none;">
+
+            <div class="pelicula proximamente">
+                <div class="poster-placeholder">🌊</div>
+                <div class="pelicula-info">
+                    <span class="genero">Animación</span>
+                    <h3>Moana 3</h3>
+                    <p>Moana emprende un nuevo viaje por mares desconocidos.</p>
+                    <span class="fecha-estreno">📅 Estreno: 18 de julio</span>
+                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
+                </div>
+            </div>
+
+            <div class="pelicula proximamente">
+                <div class="poster-placeholder">🕶️</div>
+                <div class="pelicula-info">
+                    <span class="genero">Acción</span>
+                    <h3>Mission: Impossible - Resurrección</h3>
+                    <p>Ethan Hunt enfrenta su misión más peligrosa hasta la fecha.</p>
+                    <span class="fecha-estreno">📅 Estreno: 1 de agosto</span>
+                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
+                </div>
+            </div>
+
+            <div class="pelicula proximamente">
+                <div class="poster-placeholder">🧙‍♀️</div>
+                <div class="pelicula-info">
+                    <span class="genero">Musical</span>
+                    <h3>Wicked: Parte 2</h3>
+                    <p>El final de la historia jamás contada de las brujas de Oz.</p>
+                    <span class="fecha-estreno">📅 Estreno: 15 de agosto</span>
+                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
+                </div>
+            </div>
+
+            <div class="pelicula proximamente">
+                <div class="poster-placeholder">⚔️</div>
+                <div class="pelicula-info">
+                    <span class="genero">Acción / Drama</span>
+                    <h3>Gladiator III</h3>
+                    <p>Una nueva generación lucha por el honor en el Coliseo de Roma.</p>
+                    <span class="fecha-estreno">📅 Estreno: 29 de agosto</span>
+                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
+                </div>
+            </div>
+
         </section>
 
     </main>
@@ -394,6 +561,7 @@ function cerrarModal() {
 
 </div>
 
+<script src="script.js"></script>
 
 </body>
 

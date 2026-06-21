@@ -25,6 +25,7 @@
             </div>
         </a>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
         <!--
             Apartado del header que se usara para navegar entre paginas <nav>
         -->
@@ -112,6 +113,27 @@
 
         </section>
 
+        <!--
+            Selector rapido de cine: guarda la sede elegida en localStorage
+            y lleva al usuario a peliculas.html con esa sede ya filtrada
+        -->
+        <div class="hero-selector-cine">
+            <label for="cineRapido">📍 Elige tu cine y mira su cartelera:</label>
+            <select id="cineRapido">
+                <option value="todos">Todas las sedes</option>
+                <option value="ate">CinePlus Ate</option>
+                <option value="lurigancho">CinePlus Lurigancho</option>
+                <option value="surco">CinePlus Surco</option>
+                <option value="sjl">CinePlus San Juan de Lurigancho</option>
+                <option value="olivos">CinePlus Los Olivos</option>
+                <option value="miraflores">CinePlus Miraflores</option>
+                <option value="callao">CinePlus Callao</option>
+                <option value="ves">CinePlus Villa El Salvador</option>
+                <option value="sanborja">CinePlus San Borja</option>
+            </select>
+            <button type="button" class="btn-cartelera" onclick="irACartelera()">Ver Cartelera</button>
+        </div>
+
 
         <!-- SECCION: PELICULAS DESTACADAS-->
         <h2 class="seccion-titulo">🎬 Películas Destacadas</h2>
@@ -186,6 +208,7 @@
         </div>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
