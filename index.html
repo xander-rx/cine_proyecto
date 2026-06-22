@@ -8,29 +8,279 @@
     <link rel="icon" href="images/icon_cineplus.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ===== POPUP PROMOCION ===== */
-        #popup-promo {
-            display: none;
-            position: fixed;
-            z-index: 99999;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
-            align-items: center;
-            justify-content: center;
+
+        /* ================================================
+           MEJORAS AL CARRUSEL
+        ================================================ */
+
+        /* Más altura y fondo más rico */
+        .carrusel {
+            height: 500px !important;
+            background: #080808 !important;
         }
-        #popup-promo.visible {
+
+        /* Transición de fade más suave (15s ciclo total) */
+        .slide {
+            animation: fadeSlide 15s infinite !important;
+        }
+        .slide-1 {
+            background: linear-gradient(120deg, #0d0d0d 45%, #1f0810 100%) !important;
+            animation-delay: 0s !important;
+        }
+        .slide-2 {
+            background: linear-gradient(120deg, #0d0d0d 45%, #080e1f 100%) !important;
+            animation-delay: 5s !important;
+        }
+        .slide-3 {
+            background: linear-gradient(120deg, #0d0d0d 45%, #180818 100%) !important;
+            animation-delay: 10s !important;
+        }
+
+        @keyframes fadeSlide {
+            0%          { opacity: 0; transform: scale(1.015); }
+            6%, 30%     { opacity: 1; transform: scale(1); }
+            36%, 100%   { opacity: 0; transform: scale(1.015); }
+        }
+
+        /* Dots sincronizan con el nuevo ciclo */
+        .dot { animation: activarDot2 15s infinite !important; }
+        .dot-1 { animation-delay: 0s !important; }
+        .dot-2 { animation-delay: 5s !important; }
+        .dot-3 { animation-delay: 10s !important; }
+        @keyframes activarDot2 {
+            0%, 30%  { background-color: #D4AF37; transform: scale(1.5); width: 24px; border-radius: 5px; }
+            36%, 100%{ background-color: rgba(255,255,255,0.25); transform: scale(1); width: 10px; border-radius: 50%; }
+        }
+        .dot { transition: width 0.4s, border-radius 0.4s; }
+
+        /* Badge más elegante */
+        .slide-badge {
+            border-radius: 20px !important;
+            font-size: 12px !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
+            padding: 6px 16px !important;
+            background: rgba(114,47,55,0.7) !important;
+            backdrop-filter: blur(4px) !important;
+            border: 1px solid rgba(212,175,55,0.6) !important;
+        }
+
+        /* Título con sombra de luz */
+        .slide-contenido h2 {
+            text-shadow: 0 2px 30px rgba(114,47,55,0.7) !important;
+            font-size: 56px !important;
+        }
+
+        /* Botón con gradiente */
+        .btn-slide {
+            border-radius: 30px !important;
+            background: linear-gradient(90deg, #722F37, #a03040) !important;
+            border: 2px solid rgba(212,175,55,0.7) !important;
+            letter-spacing: 1px !important;
+            padding: 13px 34px !important;
+            transition: all 0.3s !important;
+        }
+        .btn-slide:hover {
+            background: linear-gradient(90deg, #D4AF37, #f0cc60) !important;
+            color: #0a0a0a !important;
+            border-color: #D4AF37 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(212,175,55,0.35) !important;
+        }
+
+        /* Imagen con sombra más pronunciada */
+        .slide-imagen img {
+            filter: drop-shadow(0 0 40px rgba(114,47,55,0.8)) !important;
+        }
+
+        /* Barra de progreso en los dots */
+        .carrusel-dots {
+            bottom: 24px !important;
+            gap: 8px !important;
+        }
+
+        /* Línea decorativa en la parte inferior del carrusel */
+        .carrusel::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #722F37, #D4AF37, #722F37, transparent);
+            z-index: 5;
+        }
+
+        /* ================================================
+           PELICULA DE LA SEMANA
+        ================================================ */
+        .pelicula-semana {
+            position: relative;
+            margin: 10px 40px 10px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0a0a 0%, #1a0508 40%, #2d0f14 100%);
+            border: 1px solid #3a1a1e;
             display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 44px 56px;
+            box-shadow: 0 8px 40px rgba(114,47,55,0.3);
         }
+
+        /* Brillo que barre la tarjeta */
+        .pelicula-semana::before {
+            content: '';
+            position: absolute;
+            top: -60%; left: -40%;
+            width: 50%; height: 220%;
+            background: linear-gradient(105deg, transparent 40%, rgba(212,175,55,0.05) 50%, transparent 60%);
+            animation: brilloBarrer 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes brilloBarrer {
+            0%   { left: -50%; }
+            100% { left: 130%; }
+        }
+
+        .ps-badge {
+            position: absolute;
+            top: 20px; left: 20px;
+            background: linear-gradient(90deg, #D4AF37, #f0cc60);
+            color: #0a0a0a;
+            font-size: 11px; font-weight: bold;
+            letter-spacing: 2px; text-transform: uppercase;
+            padding: 6px 18px; border-radius: 20px;
+        }
+
+        .ps-poster {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .ps-poster img {
+            width: 200px;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.7),
+                        0 0 0 3px rgba(212,175,55,0.35);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .ps-poster img:hover {
+            transform: scale(1.04) rotate(-1deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8),
+                        0 0 0 3px rgba(212,175,55,0.8);
+        }
+
+        .ps-info {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        .ps-genero {
+            display: inline-block;
+            background: rgba(114,47,55,0.5);
+            border: 1px solid #722F37;
+            color: #ffb3b3;
+            font-size: 12px; font-weight: bold;
+            letter-spacing: 1px; text-transform: uppercase;
+            padding: 4px 14px; border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        .ps-titulo {
+            font-size: 44px;
+            font-weight: bold;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 20px rgba(114,47,55,0.5);
+        }
+        .ps-estrellas {
+            color: #D4AF37;
+            font-size: 20px;
+            margin-bottom: 14px;
+            letter-spacing: 3px;
+        }
+        .ps-desc {
+            font-size: 15px;
+            color: #ccbbbb;
+            line-height: 1.7;
+            max-width: 500px;
+            margin-bottom: 28px;
+        }
+        .ps-botones {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .ps-btn-comprar {
+            background: linear-gradient(90deg, #d1005b, #ff005d);
+            color: #fff;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .ps-btn-comprar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(209,0,91,0.45);
+        }
+        .ps-btn-detalles {
+            background: transparent;
+            color: #D4AF37;
+            border: 2px solid #D4AF37;
+            padding: 11px 26px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .ps-btn-detalles:hover {
+            background: #D4AF37;
+            color: #0a0a0a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .carrusel { height: 380px !important; }
+            .slide-contenido h2 { font-size: 34px !important; }
+            .pelicula-semana {
+                flex-direction: column;
+                margin: 20px 16px;
+                padding: 50px 24px 30px;
+                gap: 24px;
+                text-align: center;
+            }
+            .ps-titulo { font-size: 28px; }
+            .ps-botones { justify-content: center; }
+        }
+
+        /* ================================================
+           POPUP PROMOCION
+        ================================================ */
+        #popup-promo {
+            display: none; position: fixed;
+            z-index: 99999; inset: 0;
+            background: rgba(0,0,0,0.75);
+            align-items: center; justify-content: center;
+        }
+        #popup-promo.visible { display: flex; }
         .popup-caja {
             background: linear-gradient(145deg, #1a0a0c, #2d0f14);
-            border: 2px solid #D4AF37;
-            border-radius: 18px;
-            max-width: 480px;
-            width: 92%;
-            padding: 36px 32px 28px;
-            text-align: center;
+            border: 2px solid #D4AF37; border-radius: 18px;
+            max-width: 480px; width: 92%;
+            padding: 36px 32px 28px; text-align: center;
             position: relative;
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 40px rgba(212,175,55,0.25);
             animation: popupEntrada 0.4s ease;
         }
         @keyframes popupEntrada {
@@ -38,69 +288,42 @@
             to   { transform: scale(1);    opacity: 1; }
         }
         .popup-cerrar {
-            position: absolute;
-            top: 12px;
-            right: 18px;
-            font-size: 26px;
-            color: #aaa;
-            cursor: pointer;
-            background: none;
-            border: none;
-            line-height: 1;
-            transition: color 0.2s;
+            position: absolute; top: 12px; right: 18px;
+            font-size: 26px; color: #aaa; cursor: pointer;
+            background: none; border: none; transition: color 0.2s;
         }
         .popup-cerrar:hover { color: #fff; }
         .popup-badge {
             display: inline-block;
             background: linear-gradient(90deg, #d1005b, #ff005d);
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            padding: 4px 14px;
-            border-radius: 20px;
-            margin-bottom: 14px;
+            color: #fff; font-size: 12px; font-weight: bold;
+            letter-spacing: 1px; padding: 4px 14px;
+            border-radius: 20px; margin-bottom: 14px;
             text-transform: uppercase;
         }
         .popup-titulo {
-            color: #D4AF37;
-            font-size: 26px;
-            font-weight: bold;
+            color: #D4AF37; font-size: 26px; font-weight: bold;
             margin: 0 0 10px;
             font-family: 'Courier New', Courier, monospace;
         }
-        .popup-desc {
-            color: #ccc;
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
+        .popup-desc { color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 22px; }
         .popup-desc strong { color: #fff; }
         .popup-btn {
             display: inline-block;
             background: linear-gradient(90deg, #d1005b, #ff005d);
-            color: #fff;
-            font-weight: bold;
-            font-size: 15px;
-            padding: 13px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
+            color: #fff; font-weight: bold; font-size: 15px;
+            padding: 13px 32px; border-radius: 30px;
+            text-decoration: none; border: none; cursor: pointer;
             transition: transform 0.2s;
         }
         .popup-btn:hover { transform: scale(1.05); }
         .popup-no-mostrar {
-            display: block;
-            margin-top: 16px;
-            color: #666;
-            font-size: 12px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            text-decoration: underline;
+            display: block; margin-top: 16px; color: #666;
+            font-size: 12px; cursor: pointer; background: none;
+            border: none; text-decoration: underline;
         }
         .popup-no-mostrar:hover { color: #999; }
+
     </style>
 </head>
 
@@ -138,7 +361,7 @@
 
     <main>
 
-        <!--CARRUSEL AUTOMATICO-->
+        <!-- CARRUSEL MEJORADO -->
         <section class="carrusel">
             <div class="slide slide-1">
                 <div class="slide-contenido">
@@ -189,6 +412,7 @@
             </div>
         </section>
 
+        <!-- SELECTOR RAPIDO DE CINE -->
         <div class="hero-selector-cine">
             <label for="cineRapido">📍 Elige tu cine y mira su cartelera:</label>
             <select id="cineRapido">
@@ -206,6 +430,35 @@
             <button type="button" class="btn-cartelera" onclick="irACartelera()">Ver Cartelera</button>
         </div>
 
+        <!-- ============================================
+             PELICULA DE LA SEMANA
+        ============================================ -->
+        <h2 class="seccion-titulo">🏆 Película <span>de la Semana</span></h2>
+
+        <div class="pelicula-semana">
+            <span class="ps-badge">⭐ Recomendado esta semana</span>
+
+            <div class="ps-poster">
+                <img src="images/avengers.png" alt="Avengers">
+            </div>
+
+            <div class="ps-info">
+                <span class="ps-genero">Acción</span>
+                <h2 class="ps-titulo">Avengers</h2>
+                <div class="ps-estrellas">★★★★★</div>
+                <p class="ps-desc">
+                    Los héroes más poderosos de la Tierra se unen para hacer frente
+                    a la mayor amenaza del universo. Acción, emoción y efectos visuales
+                    sin igual en la pantalla grande de CinePlus.
+                </p>
+                <div class="ps-botones">
+                    <a href="peliculas.html" class="ps-btn-comprar">🎟 Comprar Entradas</a>
+                    <a href="peliculas.html" class="ps-btn-detalles">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PELICULAS DESTACADAS -->
         <h2 class="seccion-titulo">🎬 Películas Destacadas</h2>
 
         <section class="catalogo">
@@ -260,7 +513,7 @@
         </div>
     </footer>
 
-    <!-- ===== POPUP PROMOCIÓN ===== -->
+    <!-- POPUP PROMOCION -->
     <div id="popup-promo" role="dialog" aria-modal="true">
         <div class="popup-caja">
             <button class="popup-cerrar" onclick="cerrarPopup()" aria-label="Cerrar">&#x2715;</button>
@@ -277,7 +530,6 @@
 
     <script src="script.js"></script>
     <script>
-        // Muestra el popup al cargar, salvo que el usuario lo haya descartado antes
         window.addEventListener('DOMContentLoaded', () => {
             if (!localStorage.getItem('popupPromoCerrado')) {
                 setTimeout(() => {
@@ -285,17 +537,13 @@
                 }, 800);
             }
         });
-
         function cerrarPopup() {
             document.getElementById('popup-promo').classList.remove('visible');
         }
-
         function noMostrarMas() {
             localStorage.setItem('popupPromoCerrado', '1');
             cerrarPopup();
         }
-
-        // Cerrar al hacer clic en el fondo oscuro
         document.getElementById('popup-promo').addEventListener('click', function(e) {
             if (e.target === this) cerrarPopup();
         });
