@@ -7,15 +7,105 @@
     <title>CinePlus</title>
     <link rel="icon" href="images/icon_cineplus.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== POPUP PROMOCION ===== */
+        #popup-promo {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            align-items: center;
+            justify-content: center;
+        }
+        #popup-promo.visible {
+            display: flex;
+        }
+        .popup-caja {
+            background: linear-gradient(145deg, #1a0a0c, #2d0f14);
+            border: 2px solid #D4AF37;
+            border-radius: 18px;
+            max-width: 480px;
+            width: 92%;
+            padding: 36px 32px 28px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+            animation: popupEntrada 0.4s ease;
+        }
+        @keyframes popupEntrada {
+            from { transform: scale(0.85); opacity: 0; }
+            to   { transform: scale(1);    opacity: 1; }
+        }
+        .popup-cerrar {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 26px;
+            color: #aaa;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .popup-cerrar:hover { color: #fff; }
+        .popup-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #d1005b, #ff005d);
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .popup-titulo {
+            color: #D4AF37;
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 0 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .popup-desc {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+        .popup-desc strong { color: #fff; }
+        .popup-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #d1005b, #ff005d);
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 13px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .popup-btn:hover { transform: scale(1.05); }
+        .popup-no-mostrar {
+            display: block;
+            margin-top: 16px;
+            color: #666;
+            font-size: 12px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            text-decoration: underline;
+        }
+        .popup-no-mostrar:hover { color: #999; }
+    </style>
 </head>
 
 <body>
     <header class="header">
-        <!-- encabezado 
-         Divido en clases para poder trabajar el style.css
-         header_logos-> Se usa para el logo y letras de la pagina
-         Se crea un nav que redirecciona a otras paginas
-        -->
         <a href="index.html" class="logo-link">
             <div class="header_logo">
                 <img src="images/icon_cineplus.png" alt="LogocinePlus">
@@ -26,9 +116,7 @@
         </a>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-        <!--
-            Apartado del header que se usara para navegar entre paginas <nav>
-        -->
+
         <div>
             <nav class="nav">
                 <a href="peliculas.html">Peliculas</a>
@@ -38,10 +126,6 @@
             </nav>
         </div>
 
-        <!--
-            Apartado de Buscar y Loguear/Registrarse
-        -->
-
         <div class="header_acciones">
             <a href="login.html" class="icon_usuario">
                 <img src="images/Imagen1.png" alt="Usuario">
@@ -50,16 +134,12 @@
                 <img src="images/buscador.png" alt="Buscar">
             </a>
         </div>
-
-
     </header>
 
     <main>
 
-        <!--CARRUSEL AUTOMATICO : Usa animacion CSS con @keyframes-->
+        <!--CARRUSEL AUTOMATICO-->
         <section class="carrusel">
-
-            <!-- Slide 1: Pelicula Spider-Man -->
             <div class="slide slide-1">
                 <div class="slide-contenido">
                     <span class="slide-badge">🎬 Ahora en Cartel</span>
@@ -72,7 +152,6 @@
                 </div>
             </div>
 
-            <!-- Slide 2: Nueva sede en Callao -->
             <div class="slide slide-2">
                 <div class="slide-contenido">
                     <span class="slide-badge">📍 Nueva Apertura</span>
@@ -88,7 +167,6 @@
                 </div>
             </div>
 
-            <!-- Slide 3: Promo de parejas -->
             <div class="slide slide-3">
                 <div class="slide-contenido">
                     <span class="slide-badge">❤️ Promo Especial</span>
@@ -104,19 +182,13 @@
                 </div>
             </div>
 
-            <!-- Puntos indicadores: se animan en sincronía con los slides -->
             <div class="carrusel-dots">
                 <span class="dot dot-1"></span>
                 <span class="dot dot-2"></span>
                 <span class="dot dot-3"></span>
             </div>
-
         </section>
 
-        <!--
-            Selector rapido de cine: guarda la sede elegida en localStorage
-            y lleva al usuario a peliculas.html con esa sede ya filtrada
-        -->
         <div class="hero-selector-cine">
             <label for="cineRapido">📍 Elige tu cine y mira su cartelera:</label>
             <select id="cineRapido">
@@ -134,81 +206,100 @@
             <button type="button" class="btn-cartelera" onclick="irACartelera()">Ver Cartelera</button>
         </div>
 
-
-        <!-- SECCION: PELICULAS DESTACADAS-->
         <h2 class="seccion-titulo">🎬 Películas Destacadas</h2>
 
         <section class="catalogo">
-
-            <!-- Tarjeta: Avatar -->
             <div class="pelicula">
                 <img src="images/avatar.png" alt="Avatar">
                 <span class="genero">Ciencia Ficción</span>
                 <h3>Avatar</h3>
                 <p>Un exmarine viaja al planeta Pandora en una misión única.</p>
             </div>
-
-            <!-- Tarjeta: Spider-Man -->
             <div class="pelicula">
                 <img src="images/spiderman.png" alt="Spiderman">
                 <span class="genero">Acción</span>
                 <h3>Spider-Man</h3>
                 <p>El joven superhéroe protege Nueva York de sus enemigos.</p>
             </div>
-
-            <!-- Tarjeta: Frozen -->
             <div class="pelicula">
                 <img src="images/frozen.png" alt="Frozen">
                 <span class="genero">Animación</span>
                 <h3>Frozen</h3>
                 <p>La magia del reino de Arendelle en una aventura helada.</p>
             </div>
-
-            <!-- Tarjeta: Jurassic World -->
             <div class="pelicula">
                 <img src="images/jurassic.png" alt="Jurassic World">
                 <span class="genero">Aventura</span>
                 <h3>Jurassic World</h3>
                 <p>Los dinosaurios vuelven a dominar la tierra en este parque.</p>
             </div>
-
         </section>
 
     </main>
 
     <footer class="footer_index">
         <div class="footer-container">
-            <!-- Columna 1: nombre y slogan del cine -->
-
             <div class="footer-col">
                 <h3>CinePlus</h3>
                 <p>Tu experiencia de cine favorita</p>
             </div>
-
-            <!-- Columna 2: informacion de contacto -->
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <p>📞 (01) 123 4567</p>
                 <p>✉️ contacto@cineplus.com</p>
             </div>
-
-            <!-- Columna 3: redes sociales -->
-
             <div class="footer-col">
                 <h4>Síguenos</h4>
                 <a href="https://www.facebook.com/" target="_blank">Facebook</a>
                 <a href="https://www.instagram.com/" target="_blank">Instagram</a>
                 <a href="https://www.youtube.com/" target="_blank">YouTube</a>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 CinePlus - Todos los derechos reservados</p>
         </div>
-
     </footer>
+
+    <!-- ===== POPUP PROMOCIÓN ===== -->
+    <div id="popup-promo" role="dialog" aria-modal="true">
+        <div class="popup-caja">
+            <button class="popup-cerrar" onclick="cerrarPopup()" aria-label="Cerrar">&#x2715;</button>
+            <span class="popup-badge">🔥 Oferta de la semana</span>
+            <h2 class="popup-titulo">¡2×1 en entradas!</h2>
+            <p class="popup-desc">
+                Este fin de semana lleva a quien quieras al cine y paga solo una entrada.<br><br>
+                Válido en <strong>todas las sedes CinePlus</strong> para cualquier función entre las <strong>14:00 y 18:00 hrs</strong>.
+            </p>
+            <a href="promociones.html" class="popup-btn" onclick="cerrarPopup()">Ver todas las promociones</a>
+            <button class="popup-no-mostrar" onclick="noMostrarMas()">No volver a mostrar</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Muestra el popup al cargar, salvo que el usuario lo haya descartado antes
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('popupPromoCerrado')) {
+                setTimeout(() => {
+                    document.getElementById('popup-promo').classList.add('visible');
+                }, 800);
+            }
+        });
+
+        function cerrarPopup() {
+            document.getElementById('popup-promo').classList.remove('visible');
+        }
+
+        function noMostrarMas() {
+            localStorage.setItem('popupPromoCerrado', '1');
+            cerrarPopup();
+        }
+
+        // Cerrar al hacer clic en el fondo oscuro
+        document.getElementById('popup-promo').addEventListener('click', function(e) {
+            if (e.target === this) cerrarPopup();
+        });
+    </script>
 </body>
 
 </html>
