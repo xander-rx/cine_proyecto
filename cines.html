@@ -134,8 +134,42 @@
 
 </section>
 
+    <!-- VENTANA -->
 </main>
+<div id="popup-descuento" class="popup">
+    <div class="popup-contenido">
+        <span class="cerrar">&times;</span>
 
+        <h2>🎉 ¡Bienvenido!</h2>
+        <h3>50% DE DESCUENTO</h3>
+
+        <p>Exclusivo para nuevos usuarios.</p>
+        <p>Usa el código:</p>
+
+        <div class="codigo-descuento">
+            NUEVO50
+        </div>
+
+        <button class="btn-popup" onclick="cerrarPopup()">
+            Obtener Oferta
+        </button>
+    </div>
+</div>
+    <script>
+window.onload = function() {
+    if(!localStorage.getItem("nuevoUsuarioPopup")){
+        document.getElementById("popup-descuento").style.display = "block";
+        localStorage.setItem("nuevoUsuarioPopup","visto");
+    }
+}
+
+function cerrarPopup(){
+    document.getElementById("popup-descuento").style.display = "none";
+}
+
+document.querySelector(".cerrar").onclick = cerrarPopup;
+</script
+    
 <!-- FOOTER -->
 <footer class="footer_index">
 
