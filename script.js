@@ -154,7 +154,10 @@ if (window.location.pathname.includes("cines.html")) {
         title: "🎬 Nuestros Cines",
         text: "Encuentra la sede más cercana y disfruta la experiencia CinePlus.",
         icon: "info",
-        confirmButtonText: "Ver sedes"
+        confirmButtonText: "Ver sedes",
+        background: "#1a1a1a",
+        color: "#ffffff",
+        confirmButtonColor: "#c62828"
     });
 }
 
@@ -163,6 +166,9 @@ if (window.location.pathname.includes("promociones.html")) {
         title: "🔥 Promociones disponibles",
         text: "¡No te pierdas nuestras ofertas y descuentos especiales!",
         icon: "success",
-        confirmButtonText: "Ver promociones"
+        confirmButtonText: "Ver promociones",
+        background: "#1a1a1a",
+        color: "#ffffff",
+        confirmButtonColor: "#c62828"
     });
 }
