@@ -147,3 +147,22 @@ document.addEventListener('DOMContentLoaded', () => {
     generarSelectoresDeDia();
     aplicarCineGuardado();
 });
+
+
+if (window.location.pathname.includes("cines.html")) {
+    Swal.fire({
+        title: "🎬 Nuestros Cines",
+        text: "Encuentra la sede más cercana y disfruta la experiencia CinePlus.",
+        icon: "info",
+        confirmButtonText: "Ver sedes"
+    });
+}
+
+if (window.location.pathname.includes("promociones.html")) {
+    Swal.fire({
+        title: "🔥 Promociones disponibles",
+        text: "¡No te pierdas nuestras ofertas y descuentos especiales!",
+        icon: "success",
+        confirmButtonText: "Ver promociones"
+    });
+}
