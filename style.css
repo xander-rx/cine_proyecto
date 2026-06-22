@@ -47,7 +47,81 @@
     .hero {
         padding: 60px 20px;
     }
+/* VENTANA EMERGENTE */
+    .popup{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.8);
+}
 
+.popup-contenido{
+    background:#fff;
+    width:400px;
+    max-width:90%;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    animation:zoom .4s;
+}
+
+.popup-contenido h2{
+    color:#e50914;
+    margin-bottom:10px;
+}
+
+.popup-contenido h3{
+    font-size:35px;
+    color:#e50914;
+    margin-bottom:15px;
+}
+
+.codigo-descuento{
+    background:#e50914;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    font-size:22px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.btn-popup{
+    background:#e50914;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn-popup:hover{
+    opacity:.9;
+}
+
+.cerrar{
+    float:right;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@keyframes zoom{
+    from{
+        transform:translate(-50%,-50%) scale(.5);
+    }
+    to{
+        transform:translate(-50%,-50%) scale(1);
+    }
+}
     /* Footer en columna */
     .footer-container {
         flex-direction: column;
