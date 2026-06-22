@@ -59,8 +59,8 @@ function aplicarCineGuardado() {
 
 
 function cambiarTab(tab, boton) {
-    document.getElementById('cartelera').style.display = (tab === 'cartelera') ? 'grid' : 'none';
-    document.getElementById('estrenos').style.display = (tab === 'estrenos') ? 'grid' : 'none';
+    document.getElementById('cartelera').style.display = (tab === 'cartelera') ? 'flex' : 'none';
+    document.getElementById('estrenos').style.display = (tab === 'estrenos') ? 'flex' : 'none';
 
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('activo'));
     boton.classList.add('activo');
