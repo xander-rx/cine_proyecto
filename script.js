@@ -149,26 +149,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-if (window.location.pathname.includes("cines.html")) {
-    Swal.fire({
-        title: "🎬 Nuestros Cines",
-        text: "Encuentra la sede más cercana y disfruta la experiencia CinePlus.",
-        icon: "info",
-        confirmButtonText: "Ver sedes",
-        background: "#1a1a1a",
-        color: "#ffffff",
-        confirmButtonColor: "#c62828"
-    });
-}
-
-if (window.location.pathname.includes("promociones.html")) {
-    Swal.fire({
-        title: "🔥 Promociones disponibles",
-        text: "¡No te pierdas nuestras ofertas y descuentos especiales!",
-        icon: "success",
-        confirmButtonText: "Ver promociones",
-        background: "#1a1a1a",
-        color: "#ffffff",
-        confirmButtonColor: "#c62828"
-    });
-}
