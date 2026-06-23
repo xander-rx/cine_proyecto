@@ -9,13 +9,13 @@
     <link rel="icon" href="images/icon_cineplus.png">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Fuente para unificar con promociones -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    
     <header class="header">
         <a href="index.html" class="logo-link">
             <div class="header_logo">
@@ -41,7 +41,7 @@
         </div>
     </header>
 
-    <!-- MAIN - DULCERÍA -->
+    
     <main>
         <section class="dulceria-section">
             <h2 class="dulceria-main-title">DULCERÍA</h2>
@@ -123,7 +123,7 @@
                     <button class="btn-dulceria" data-nombre="COMBO FAMILIAR" data-precio="46.00">Agregar al carrito</button>
                 </div>
 
-                <!-- ========== COMPLEMENTOS (Nachos, Hot Dog, Chocolate) ========== -->
+                <!-- ========== COMPLEMENTOS  ========== -->
                 <div class="dulceria-card" data-categoria="complementos">
                     <div class="dulceria-img-container">
                         <img src="images/Nachos.png" alt="Nachos con queso">
@@ -158,7 +158,7 @@
         </section>
     </main>
 
-    <!-- NOTIFICACIÓN TOAST (esquina bonita) -->
+    <!-- NOTIFICACIÓN -->
     <div id="toast-notification" class="toast-notification">
         <div class="toast-icon">🍿</div>
         <div class="toast-message">
@@ -167,7 +167,7 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+   
     <footer class="footer_index">
         <div class="footer-container">
             <div class="footer-col">
@@ -191,7 +191,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT PARA FILTROS Y NOTIFICACIÓN BONITA -->
+    <!-- SCRIPT PARA FILTROS Y NOTIFICACIÓN -->
     <script>
         // Filtros por categoría
         const buttons = document.querySelectorAll('.menu-btn');
@@ -212,7 +212,7 @@
             });
         });
 
-        // NOTIFICACIÓN TOAST (bonita, en esquina)
+        // NOTIFICACIÓN TOAST 
         const toast = document.getElementById('toast-notification');
         const toastProducto = document.getElementById('toast-producto');
 
