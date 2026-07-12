@@ -211,7 +211,7 @@
                 <button class="btn-detalles" onclick="mostrarDetalles(
                     'The Batman',
                     'images/batman.png',
-                    'https://www.youtube.com/embed/mqqft2x_Aa4',
+                    'https://www.youtube.com/watch?v=AKVe9QC1ngc',
                     'Batman enfrenta nuevos enemigos mientras investiga Gotham.'
                 )">
                     Ver detalles
@@ -238,7 +238,7 @@
             <button class="btn-detalles" onclick="mostrarDetalles(
                 'Avengers',
                 'images/avengers.png',
-                'https://www.youtube.com/embed/eOrNdBpGMv8',
+                'https://www.youtube.com/watch?v=yNXfOOL8824',
                 'Los héroes más poderosos de la Tierra se unen para enfrentar una gran amenaza.'
             )">
 
@@ -266,7 +266,7 @@
             <button class="btn-detalles" onclick="mostrarDetalles(
                 'Titanic',
                 'images/titanic.png',
-                'https://www.youtube.com/embed/kVrqfYjkTdQ',
+                'https://www.youtube.com/watch?v=1EMkCJWQIDY',
                 'Jack y Rose viven una inolvidable historia de amor a bordo del Titanic.'
             )">
              Ver detalles
@@ -291,7 +291,7 @@
             <button class="btn-detalles" onclick="mostrarDetalles(
                 'Mortal Kombat II',
                 'images/mortal.jpg',
-                'https://www.youtube.com/embed/example3',
+                'https://www.youtube.com/watch?v=_5RFjYeWSls',
                 'Nuevos combates y desafíos en el torneo Mortal Kombat.'
             )">
                 Ver detalles
@@ -431,130 +431,167 @@ function cerrarModal() {
 }
 
 </script>
-        <!-- Pelicula nueva: Coco 2 (sin poster real aun, usa placeholder) -->
-        <div class="pelicula" data-cines="surco,miraflores,sanborja,olivos,ate">
-            <img src="images/coco2.jpg" alt="Coco 2">
-
-            <div class="pelicula-info">
-                <span class="genero">Animación</span>
-                <h3>Coco 2</h3>
-                <p>Miguel regresa a la Tierra de los Muertos en una nueva aventura familiar.</p>
-
-                <div class="botones-pelicula">
-                    <button class="btn-comprar">Comprar</button>
-                    <button class="btn-detalles" onclick="mostrarDetalles(
-                        'Coco 2',
-                        '',
-                        '',
-                        'Miguel regresa a la Tierra de los Muertos en una nueva aventura familiar.'
-                    )">
-                        Ver detalles
-                    </button>
-                </div>
-
-                <div class="horario-selector" data-horarios="13:00,15:30,18:00"></div>
-            </div>
+        <!-- Pelicula nueva: Coco 1 (sin poster real aun, usa placeholder) -->
+<div class="pelicula" data-cines="surco,miraflores,sanborja,olivos,ate">
+    <img src="images/coco.jpg" alt="Coco">
+    <div class="pelicula-info">
+        <span class="genero">Animación / Aventura</span>
+        <h3>Coco</h3>
+        <p>Miguel viaja a la Tierra de los Muertos para descubrir la verdad sobre su familia y perseguir su sueño de ser músico.</p>
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Coco',
+                'images/coco.jpg',
+                'https://www.youtube.com/embed/Rvr68u6k5sI',
+                'Miguel, un niño apasionado por la música, emprende un viaje inolvidable a la Tierra de los Muertos para descubrir la historia de su familia y seguir su verdadero destino.'
+            )">
+                Ver detalles
+            </button>
         </div>
-
-        <!-- Pelicula nueva: John Wick 5 (sin poster real aun, usa placeholder) -->
+        <div class="horario-selector" data-horarios="13:00,15:30,18:00"></div>
+    </div>
+</div>
+            
+        <!-- Pelicula nueva: Five Nights at Freddy's 2 (sin poster real aun, usa placeholder) -->
         <div class="pelicula" data-cines="ate,lurigancho,sjl,callao,ves">
-            <img src="images/jhonwick.jpg" alt="John Wick">
-
-            <div class="pelicula-info">
-                <span class="genero">Acción</span>
-                <h3>John Wick 5</h3>
-                <p>El asesino más temido del mundo enfrenta su última y más peligrosa misión.</p>
-
-                <div class="botones-pelicula">
-                    <button class="btn-comprar">Comprar</button>
-                    <button class="btn-detalles" onclick="mostrarDetalles(
-                        'John Wick 5',
-                        '',
-                        '',
-                        'El asesino más temido del mundo enfrenta su última y más peligrosa misión.'
-                    )">
-                        Ver detalles
-                    </button>
-                </div>
-
-                <div class="horario-selector" data-horarios="16:00,19:00,21:45"></div>
-            </div>
+    <img src="images/fnaf2.jpg" alt="Five Nights at Freddy's 2">
+    <div class="pelicula-info">
+        <span class="genero">Terror</span>
+        <h3>Five Nights at Freddy's 2</h3>
+        <p>Los animatrónicos regresan con nuevos secretos y una amenaza aún más aterradora.</p>
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Five Nights at Freddy''s 2',
+                'images/fnaf2.jpg',
+                'https://www.youtube.com/embed/5vP0wzY4Ww0',
+                'La secuela de Five Nights at Freddy''s presenta nuevos animatrónicos, misterios y una experiencia de terror aún más intensa.'
+            )">
+                Ver detalles
+            </button>
         </div>
+        <div class="horario-selector" data-horarios="16:00,19:00,21:45"></div>
+    </div>
+</div>
 
-        <!-- Pelicula nueva: Super Mario Bros (sin poster real aun, usa placeholder) -->
-        <div class="pelicula" data-cines="ate,lurigancho,surco,sjl,olivos,miraflores,callao,ves,sanborja">
-            <img src="images/supermario.jpg" alt="Super Mario Bros">
-
-            <div class="pelicula-info">
-                <span class="genero">Animación</span>
-                <h3>Super Mario Bros</h3>
-                <p>Mario y Luigi viven una aventura sin límites en el Reino Champiñón.</p>
-
-                <div class="botones-pelicula">
-                    <button class="btn-comprar">Comprar</button>
-                    <button class="btn-detalles" onclick="mostrarDetalles(
-                        'Super Mario Bros',
-                        '',
-                        '',
-                        'Mario y Luigi viven una aventura sin límites en el Reino Champiñón.'
-                    )">
-                        Ver detalles
-                    </button>
-                </div>
-
-                <div class="horario-selector" data-horarios="11:00,13:30,16:00,18:30"></div>
-            </div>
+        <!-- Pelicula nueva: Ballerina (sin poster real aun, usa placeholder) -->
+       <div class="pelicula" data-cines="ate,lurigancho,sjl,callao,ves">
+    <img src="images/ballerina.jpg" alt="Ballerina">
+    <div class="pelicula-info">
+        <span class="genero">Acción</span>
+        <h3>Ballerina</h3>
+        <p>Una asesina entrenada por la Ruska Roma busca venganza por la muerte de su familia.</p>
+        <div class="botones-pelicula">
+            <button class="btn-comprar">Comprar</button>
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Ballerina',
+                'images/ballerina.jpg',
+                'https://www.youtube.com/embed/0FSwsrFpkbw',
+                'Ambientada en el universo de John Wick, una joven asesina inicia una peligrosa misión de venganza mientras enfrenta a poderosos enemigos.'
+            )">
+                Ver detalles
+            </button>
         </div>
-
-        </section>
+        <div class="horario-selector" data-horarios="16:00,19:00,21:45"></div>
+    </div>
+</div>
 
         <!-- Proximos Estrenos: peliculas que aun no se estrenan -->
         <section class="catalogo" id="estrenos" style="display:none;">
+    <div class="pelicula proximamente">
+        <img src="images/moana2.jpg" alt="Moana 2">
+        <div class="pelicula-info">
+            <span class="genero">Animación</span>
+            <h3>Moana 2</h3>
+            <p>Moana emprende un nuevo viaje por mares desconocidos junto a nuevos aliados para enfrentar una antigua amenaza.</p>
+            <span class="fecha-estreno">📅 Estreno: Próximamente</span>
+            <div class="botones-pelicula">
+                <button class="btn-detalles" onclick="mostrarDetalles(
+                    'Moana 2',
+                    'images/moana2.jpg',
+                    'https://www.youtube.com/embed/hDZ7y8RP5HE',
+                    'Moana recibe un inesperado llamado de sus ancestros y emprende una nueva aventura a través de los mares más peligrosos de Oceanía.'
+                )">
+                    Ver tráiler
+                </button>
+                <button class="btn-recordar" onclick="activarRecordatorio(this)">
+                    🔔 Recordarme
+                </button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+           <div class="pelicula proximamente">
+    <img src="images/misionimposible.webp" alt="Mission: Impossible - The Final Reckoning">
+    <div class="pelicula-info">
+        <span class="genero">Acción</span>
+        <h3>Mission: Impossible - The Final Reckoning</h3>
+        <p>Ethan Hunt enfrenta la misión más peligrosa de toda su carrera.</p>
+        <span class="fecha-estreno">📅 Estreno: 1 de agosto</span>
+        <div class="botones-pelicula">
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Mission: Impossible - The Final Reckoning',
+                'images/misionimposible.jpg',
+                'https://www.youtube.com/embed/fsQgc9pCyDU',
+                'Ethan Hunt y su equipo del FMI emprenden una carrera contrarreloj para detener una poderosa inteligencia artificial que amenaza el futuro de la humanidad.'
+            )">
+                Ver tráiler
+            </button>
+            <button class="btn-recordar" onclick="activarRecordatorio(this)">
+                🔔 Recordarme
+            </button>
+        </div>
+    </div>
+</div>
 
             <div class="pelicula proximamente">
-                <img src="images/moana3.jpg" alt="Moana 3">
-                <div class="pelicula-info">
-                    <span class="genero">Animación</span>
-                    <h3>Moana 3</h3>
-                    <p>Moana emprende un nuevo viaje por mares desconocidos.</p>
-                    <span class="fecha-estreno">📅 Estreno: 18 de julio</span>
-                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
-                </div>
-            </div>
+   <div class="pelicula proximamente">
+    <img src="images/scream7.jpg" alt="Scream 7">
+    <div class="pelicula-info">
+        <span class="genero">Terror / Suspenso</span>
+        <h3>Scream 7</h3>
+        <p>Ghostface regresa con una nueva serie de asesinatos que obligan a Sidney Prescott a enfrentarse una vez más a su peor pesadilla.</p>
+        <span class="fecha-estreno">📅 Estreno: 27 de febrero de 2026</span>
+        <div class="botones-pelicula">
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Scream 7',
+                'images/scream7.jpg',
+                'https://www.youtube.com/embed/UJrghaPJ0RY',
+                'Ghostface vuelve para sembrar el terror en Woodsboro. Sidney Prescott deberá enfrentar un nuevo asesino en una de las entregas más esperadas de la saga.'
+            )">
+                Ver tráiler
+            </button>
 
-            <div class="pelicula proximamente">
-            <img src="images/misionimposible.webp" alt="Mision: Impossible - Resurrección">
-                <div class="pelicula-info">
-                    <span class="genero">Acción</span>
-                    <h3>Mission: Impossible - Resurrección</h3>
-                    <p>Ethan Hunt enfrenta su misión más peligrosa hasta la fecha.</p>
-                    <span class="fecha-estreno">📅 Estreno: 1 de agosto</span>
-                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
-                </div>
-            </div>
-
-            <div class="pelicula proximamente">
-                <img src="images/wicked.jpg" alt="Wicked: Parte 2">
-
-                <div class="pelicula-info">
-                    <span class="genero">Musical</span>
-                    <h3>Wicked: Parte 2</h3>
-                    <p>El final de la historia jamás contada de las brujas de Oz.</p>
-                    <span class="fecha-estreno">📅 Estreno: 15 de agosto</span>
-                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
-                </div>
-            </div>
-
-            <div class="pelicula proximamente">
-                <img src="images/gladiator.jpg" alt="Gladiator III">
-                <div class="pelicula-info">
-                    <span class="genero">Acción / Drama</span>
-                    <h3>Gladiator III</h3>
-                    <p>Una nueva generación lucha por el honor en el Coliseo de Roma.</p>
-                    <span class="fecha-estreno">📅 Estreno: 29 de agosto</span>
-                    <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
-                </div>
-            </div>
+            <button class="btn-recordar" onclick="activarRecordatorio(this)">
+                🔔 Recordarme
+            </button>
+        </div>
+    </div>
+</div>
+                
+           <div class="pelicula proximamente">
+    <img src="images/gladiator2.jpg" alt="Gladiator II">
+    <div class="pelicula-info">
+        <span class="genero">Acción / Drama</span>
+        <h3>Gladiator II</h3>
+        <p>Lucius regresa al Coliseo para luchar por el honor y el futuro de Roma.</p>
+        <span class="fecha-estreno">📅 Estreno: Próximamente</span>
+        <div class="botones-pelicula">
+            <button class="btn-detalles" onclick="mostrarDetalles(
+                'Gladiator II',
+                'images/gladiator2.jpg',
+                'https://www.youtube.com/embed/4rgYUipGJNo',
+                'Años después de la muerte de Máximo, Lucius se convierte en gladiador para desafiar al imperio y recuperar el honor de Roma.'
+            )">
+                Ver tráiler
+            </button>
+            <button class="btn-recordar" onclick="activarRecordatorio(this)">🔔 Recordarme</button>
+        </div>
+    </div>
+</div>
 
         </section>
 
