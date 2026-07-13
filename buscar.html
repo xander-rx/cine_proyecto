@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador - CinePlus</title>
+    <link rel="icon" href="images/icon_cineplus.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo-link">
+        <div class="header_logo">
+            <img src="images/icon_cineplus.png" alt="Logo CinePlus">
+        </div>
+        <h1 class="header_title">CinePlus</h1>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <div>
+        <nav class="nav">
+            <a href="peliculas.html">Películas</a>
+            <a href="cines.html">Cines</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="dulceria.html">Dulcería</a>
+        </nav>
+    </div>
+
+    <div class="header_acciones">
+        <a href="login.html" class="icon_usuario">
+            <img src="images/Imagen1.png" alt="Usuario">
+        </a>
+        <a href="buscador.html" class="icon_buscador">
+            <img src="images/buscador.png" alt="Buscar">
+        </a>
+    </div>
+
+</header>
+
+
+    <main>
+
+        <section class="buscador-hero">
+            <h1>🔍 Buscar Películas</h1>
+            <div class="buscador-caja">
+                <input type="text" id="inputBuscador" placeholder="Busca por título o género... Ej: Avatar, Terror, Acción" autofocus>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="buscador-chips">
+                <span class="buscador-chip" data-chip="Acción">Acción</span>
+                <span class="buscador-chip" data-chip="Animación">Animación</span>
+                <span class="buscador-chip" data-chip="Terror">Terror</span>
+                <span class="buscador-chip" data-chip="Aventura">Aventura</span>
+                <span class="buscador-chip" data-chip="Fantasía">Fantasía</span>
+                <span class="buscador-chip" data-chip="Romance">Romance</span>
+            </div>
+        </section>
+
+        <p class="buscador-resultados-header" id="resultadosHeader"></p>
+
+        <section class="catalogo" id="resultadosBuscador"></section>
+
+        <div class="buscador-vacio" id="buscadorVacio" style="display:none;">
+            <i class="fa-solid fa-clapperboard"></i>
+            No encontramos películas que coincidan con tu búsqueda.
+        </div>
+
+    </main>
+
+<footer class="footer_index">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <a href="trabaja-con-nosotros.html"><i class="fa-solid fa-earth-americas"></i>Trabaja con nosotros</a>
+            <a href="cines.html"><i class="fa-solid fa-location-dot"></i>Nuestras Sedes</a>
+            <a href="contacto.html"><i class="fa-solid fa-phone"></i>Contacto</a>
+            <a href="promociones.html"><i class="fa-solid fa-ticket"></i>Promociones</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Políticas</h4>
+            <a href="politica-privacidad.html"><i class="fa-solid fa-magnifying-glass"></i>Política de Privacidad</a>
+            <a href="terminos-condiciones.html"><i class="fa-solid fa-file-lines"></i>Términos y Condiciones</a>
+            <a href="cambios-devoluciones.html"><i class="fa-solid fa-right-left"></i>Cambios y Devoluciones</a>
+            <a href="libro-reclamaciones.html"><i class="fa-solid fa-book"></i>Libro de Reclamaciones</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://wa.me/51999999999" target="_blank"><i class="fab fa-whatsapp"></i>Whatsapp</a>
+            <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i>Tiktok</a>
+        </div>
+
+        <div class="footer-col footer-col-extra">
+            <a href="libro-reclamaciones.html" class="footer-libro">
+                <i class="fa-solid fa-book-open"></i>
+                <div>
+                    <strong>LIBRO DE RECLAMACIONES</strong>
+                    <span>Ley N° 29571, Código de Protección y Defensa al Consumidor</span>
+                </div>
+            </a>
+            <div class="footer-pagos">
+                <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                <span class="pago-badge">Yape</span>
+                <span class="pago-badge">Plin</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 CinePlus. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+    <script>
+        const peliculasData = [
+            { titulo: "Avatar", genero: "Ciencia Ficción", img: "images/avatar.png", desc: "Un exmarine viaja al planeta Pandora en una misión única de exploración." },
+            { titulo: "Spider-Man", genero: "Acción", img: "images/spiderman.png", desc: "El joven Peter Parker protege Nueva York con sus poderes de araña." },
+            { titulo: "Frozen", genero: "Animación", img: "images/frozen.png", desc: "La princesa Elsa controla la magia del hielo en el reino de Arendelle." },
+            { titulo: "Jurassic World", genero: "Aventura", img: "images/jurassic.png", desc: "Los dinosaurios son recreados en un espectacular parque temático." },
+            { titulo: "The Batman", genero: "Acción", img: "images/batman.png", desc: "Un joven Batman investiga crímenes en Gotham." },
+            { titulo: "Avengers", genero: "Acción", img: "images/avengers.png", desc: "Los héroes más poderosos de la Tierra se unen para salvar el mundo." },
+            { titulo: "Titanic", genero: "Romance", img: "images/titanic.png", desc: "Una historia de amor que surge a bordo del famoso barco Titanic." },
+            { titulo: "Mortal Kombat II", genero: "Acción", img: "images/mortal.jpg", desc: "Los guerreros más poderosos regresan para defender la Tierra." },
+            { titulo: "Harry Potter", genero: "Fantasía", img: "images/harrypotter.png", desc: "Un joven mago descubre su destino en el mundo de la magia." },
+            { titulo: "Rápidos y Furiosos", genero: "Acción", img: "images/fastfurious.png", desc: "Carreras ilegales y acción al límite en las calles." },
+            { titulo: "Masters of the Universe", genero: "Acción", img: "images/mastersoftheuniverse.jpg", desc: "He-Man lucha para proteger Eternia del malvado Skeletor." },
+            { titulo: "Resident Evil", genero: "Terror", img: "images/residentevil.jpg", desc: "Una nueva pesadilla zombie amenaza con destruir a la humanidad." },
+            { titulo: "Coco", genero: "Animación / Aventura", img: "images/coco.jpg", desc: "Miguel viaja a la Tierra de los Muertos para descubrir la verdad sobre su familia." },
+            { titulo: "Five Nights at Freddy's 2", genero: "Terror", img: "images/fnaf2.jpg", desc: "Los animatrónicos regresan con nuevos secretos y una amenaza aún más aterradora." },
+            { titulo: "Ballerina", genero: "Acción", img: "images/ballerina.jpg", desc: "Una asesina entrenada por la Ruska Roma busca venganza por la muerte de su familia." }
+        ];
+
+        const inputBuscador = document.getElementById('inputBuscador');
+        const contenedorResultados = document.getElementById('resultadosBuscador');
+        const buscadorVacio = document.getElementById('buscadorVacio');
+        const resultadosHeader = document.getElementById('resultadosHeader');
+
+        function pintarResultados(lista, termino) {
+            contenedorResultados.innerHTML = '';
+
+            if (lista.length === 0) {
+                buscadorVacio.style.display = 'block';
+                resultadosHeader.textContent = '';
+                return;
+            }
+
+            buscadorVacio.style.display = 'none';
+            resultadosHeader.innerHTML = termino
+                ? `<strong>${lista.length}</strong> resultado(s) para "<strong>${termino}</strong>"`
+                : `Mostrando <strong>${lista.length}</strong> películas`;
+
+            lista.forEach(p => {
+                const card = document.createElement('a');
+                card.href = 'peliculas.html';
+                card.className = 'pelicula';
+                card.innerHTML = `
+                    <img src="${p.img}" alt="${p.titulo}">
+                    <div class="pelicula-info">
+                        <span class="genero">${p.genero}</span>
+                        <h3>${p.titulo}</h3>
+                        <p>${p.desc}</p>
+                        <div class="botones-pelicula">
+                            <span class="btn-comprar">Ver en Cartelera</span>
+                        </div>
+                    </div>
+                `;
+                contenedorResultados.appendChild(card);
+            });
+        }
+
+        function buscar(termino) {
+            const texto = termino.trim().toLowerCase();
+
+            if (texto === '') {
+                pintarResultados(peliculasData, '');
+                return;
+            }
+
+            const filtradas = peliculasData.filter(p =>
+                p.titulo.toLowerCase().includes(texto) ||
+                p.genero.toLowerCase().includes(texto)
+            );
+
+            pintarResultados(filtradas, termino.trim());
+        }
+
+        inputBuscador.addEventListener('input', () => buscar(inputBuscador.value));
+
+        document.querySelectorAll('.buscador-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                inputBuscador.value = chip.dataset.chip;
+                buscar(chip.dataset.chip);
+                inputBuscador.focus();
+            });
+        });
+
+        // Resultados iniciales: todas las peliculas
+        pintarResultados(peliculasData, '');
+    </script>
+
+</body>
+</html>
