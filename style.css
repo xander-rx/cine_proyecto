@@ -2313,6 +2313,11 @@ body::before{
 
 
 
+
+
+
+
+
 .footer-col a {
     display: block;
     color: white;
@@ -2330,8 +2335,7 @@ body::before{
     font-size: 18px;
 }
 
-
-/* ===== FOOTER NUEVO  ===== */
+/* ===== FOOTER NUEVO (4 columnas) ===== */
 .footer-col-extra {
     align-items: flex-start;
     gap: 16px;
@@ -2395,4 +2399,318 @@ body::before{
     .footer-col-extra {
         align-items: center;
     }
+}
+
+/* ===================================================
+   PAGINAS ESTATICAS (Contacto, Trabaja con nosotros,
+   Politicas, Terminos, Cambios y devoluciones, Libro)
+=================================================== */
+
+.static-hero {
+    background: linear-gradient(120deg, #0d0d0d 45%, #1f0810 100%);
+    border-bottom: 1px solid #3a1a1e;
+    padding: 60px 20px 44px;
+    text-align: center;
+}
+
+.static-hero span.static-badge {
+    display: inline-block;
+    background: rgba(114, 47, 55, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    color: #ffb3b3;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.static-hero h1 {
+    color: #D4AF37;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    letter-spacing: 1px;
+    margin: 0 0 12px;
+}
+
+.static-hero p {
+    color: #ccbbbb;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.static-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px 70px;
+}
+
+.static-content h2.static-subtitle {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Tarjetas de informacion */
+.info-grid {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background: #1a0a0c;
+    border: 1px solid #3a1a1e;
+    border-radius: 14px;
+    padding: 28px 22px;
+    flex: 1;
+    min-width: 220px;
+    max-width: 260px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.info-card i {
+    font-size: 30px;
+    color: #D4AF37;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.info-card h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.info-card p, .info-card a {
+    color: #ccbbbb;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.info-card a:hover {
+    color: #D4AF37;
+}
+
+/* Acordeon (terminos / privacidad) */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.acc-item {
+    background: #1a0a0c;
+    border: 1px solid #3a1a1e;
+    border-radius: 10px;
+    padding: 16px 22px;
+}
+
+.acc-item summary {
+    cursor: pointer;
+    color: #D4AF37;
+    font-weight: bold;
+    font-size: 16px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.acc-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.acc-item summary::after {
+    content: '+';
+    font-size: 22px;
+    color: #D4AF37;
+    flex-shrink: 0;
+}
+
+.acc-item[open] summary::after {
+    content: '\2212';
+}
+
+.acc-item p, .acc-item li {
+    color: #ccbbbb;
+    line-height: 1.7;
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+.acc-item ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* Formularios (contacto / trabaja con nosotros / libro reclamaciones) */
+.form-card {
+    background: #1a0a0c;
+    border: 1px solid #3a1a1e;
+    border-radius: 16px;
+    padding: 34px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.form-card h2 {
+    color: #fff;
+    margin-bottom: 22px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    color: #f3eaea;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: #0f0a0a;
+    border: 1px solid #3a1a1e;
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: #fff;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+.btn-enviar {
+    background: linear-gradient(90deg, #722F37, #a03040);
+    color: #fff;
+    border: 2px solid rgba(212, 175, 55, 0.7);
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background: linear-gradient(90deg, #D4AF37, #f0cc60);
+    color: #0a0a0a;
+    border-color: #D4AF37;
+}
+
+/* Vacantes - trabaja con nosotros */
+.vacantes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.vacante-card {
+    background: #1a0a0c;
+    border: 1px solid #3a1a1e;
+    border-radius: 14px;
+    padding: 22px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.vacante-info span {
+    display: inline-block;
+    color: #D4AF37;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.vacante-info h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.vacante-info p {
+    color: #ccbbbb;
+    font-size: 14px;
+}
+
+.btn-postular {
+    background: transparent;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-postular:hover {
+    background: #D4AF37;
+    color: #0a0a0a;
+}
+
+/* Nota final tipo aviso */
+.static-nota {
+    background: rgba(114, 47, 55, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 12px;
+    padding: 18px 22px;
+    color: #f3eaea;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .form-row { flex-direction: column; }
+    .vacante-card { flex-direction: column; align-items: flex-start; }
+    .btn-postular { width: 100%; text-align: center; }
 }

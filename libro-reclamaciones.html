@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Reclamaciones - CinePlus</title>
+    <link rel="icon" href="images/icon_cineplus.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo-link">
+        <div class="header_logo">
+            <img src="images/icon_cineplus.png" alt="Logo CinePlus">
+        </div>
+        <h1 class="header_title">CinePlus</h1>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <div>
+        <nav class="nav">
+            <a href="peliculas.html">Películas</a>
+            <a href="cines.html">Cines</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="dulceria.html">Dulcería</a>
+        </nav>
+    </div>
+
+    <div class="header_acciones">
+        <a href="login.html" class="icon_usuario">
+            <img src="images/Imagen1.png" alt="Usuario">
+        </a>
+        <a href="buscador.html" class="icon_buscador">
+            <img src="images/buscador.png" alt="Buscar">
+        </a>
+    </div>
+
+</header>
+
+
+    <main>
+
+        <section class="static-hero">
+            <span class="static-badge">📖 Ley N° 29571</span>
+            <h1>Libro de Reclamaciones</h1>
+            <p>Código de Protección y Defensa del Consumidor. Este espacio está a tu disposición para registrar quejas o reclamos sobre nuestros productos y servicios.</p>
+        </section>
+
+        <div class="static-content">
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <h3>Reclamo</h3>
+                    <p>Disconformidad relacionada con los productos o servicios.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <h3>Queja</h3>
+                    <p>Disconformidad no relacionada con los productos o servicios, o malestar en la atención.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Plazo de respuesta</h3>
+                    <p>CinePlus responderá tu reclamo en un plazo máximo de 30 días calendario.</p>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h2>Registrar un reclamo o queja</h2>
+                <form id="formLibro">
+
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <select id="tipoLibro" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="queja">Queja</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombreL">Nombre completo</label>
+                            <input type="text" id="nombreL" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dniL">DNI / Documento</label>
+                            <input type="text" id="dniL" placeholder="N° de documento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="correoL">Correo electrónico</label>
+                            <input type="email" id="correoL" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefonoL">Teléfono</label>
+                            <input type="tel" id="telefonoL" placeholder="Tu número de contacto" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sedeL">Sede</label>
+                            <select id="sedeL" required>
+                                <option value="">Selecciona una sede</option>
+                                <option value="ate">CinePlus Ate</option>
+                                <option value="miraflores">CinePlus Miraflores</option>
+                                <option value="callao">CinePlus Callao</option>
+                                <option value="surco">CinePlus Surco</option>
+                                <option value="online">Compra en línea</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="montoL">Monto reclamado (opcional)</label>
+                            <input type="text" id="montoL" placeholder="S/. 0.00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="detalleL">Detalle del reclamo o queja</label>
+                        <textarea id="detalleL" placeholder="Describe lo sucedido con el mayor detalle posible" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pedidoL">Pedido del consumidor</label>
+                        <textarea id="pedidoL" placeholder="¿Qué solución esperas de CinePlus?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar reclamo</button>
+                </form>
+            </div>
+
+            <div class="static-nota">
+                La formulación del reclamo no impide acudir a otras vías de solución de controversias, ni es
+                requisito previo para interponer una denuncia ante el INDECOPI.
+            </div>
+
+        </div>
+
+    </main>
+
+<footer class="footer_index">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <a href="trabaja-con-nosotros.html"><i class="fa-solid fa-earth-americas"></i>Trabaja con nosotros</a>
+            <a href="cines.html"><i class="fa-solid fa-location-dot"></i>Nuestras Sedes</a>
+            <a href="contacto.html"><i class="fa-solid fa-phone"></i>Contacto</a>
+            <a href="promociones.html"><i class="fa-solid fa-ticket"></i>Promociones</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Políticas</h4>
+            <a href="politica-privacidad.html"><i class="fa-solid fa-magnifying-glass"></i>Política de Privacidad</a>
+            <a href="terminos-condiciones.html"><i class="fa-solid fa-file-lines"></i>Términos y Condiciones</a>
+            <a href="cambios-devoluciones.html"><i class="fa-solid fa-right-left"></i>Cambios y Devoluciones</a>
+            <a href="libro-reclamaciones.html"><i class="fa-solid fa-book"></i>Libro de Reclamaciones</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://wa.me/51999999999" target="_blank"><i class="fab fa-whatsapp"></i>Whatsapp</a>
+            <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i>Tiktok</a>
+        </div>
+
+        <div class="footer-col footer-col-extra">
+            <a href="libro-reclamaciones.html" class="footer-libro">
+                <i class="fa-solid fa-book-open"></i>
+                <div>
+                    <strong>LIBRO DE RECLAMACIONES</strong>
+                    <span>Ley N° 29571, Código de Protección y Defensa al Consumidor</span>
+                </div>
+            </a>
+            <div class="footer-pagos">
+                <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                <span class="pago-badge">Yape</span>
+                <span class="pago-badge">Plin</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 CinePlus. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('formLibro').addEventListener('submit', function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Reclamo registrado',
+                text: 'Hemos recibido tu reclamo. Te responderemos dentro del plazo legal de 30 días calendario.',
+                icon: 'success',
+                background: '#1a1a1a',
+                color: '#ffffff',
+                confirmButtonColor: '#722F37'
+            });
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

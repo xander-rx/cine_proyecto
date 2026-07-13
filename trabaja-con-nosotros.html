@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con Nosotros - CinePlus</title>
+    <link rel="icon" href="images/icon_cineplus.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo-link">
+        <div class="header_logo">
+            <img src="images/icon_cineplus.png" alt="Logo CinePlus">
+        </div>
+        <h1 class="header_title">CinePlus</h1>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <div>
+        <nav class="nav">
+            <a href="peliculas.html">Películas</a>
+            <a href="cines.html">Cines</a>
+            <a href="promociones.html">Promociones</a>
+            <a href="dulceria.html">Dulcería</a>
+        </nav>
+    </div>
+
+    <div class="header_acciones">
+        <a href="login.html" class="icon_usuario">
+            <img src="images/Imagen1.png" alt="Usuario">
+        </a>
+        <a href="buscador.html" class="icon_buscador">
+            <img src="images/buscador.png" alt="Buscar">
+        </a>
+    </div>
+
+</header>
+
+
+    <main>
+
+        <section class="static-hero">
+            <span class="static-badge">🎬 Únete al equipo</span>
+            <h1>Trabaja con Nosotros</h1>
+            <p>En CinePlus creemos que la magia del cine también se vive detrás de cámaras. Forma parte de un equipo apasionado por el entretenimiento.</p>
+        </section>
+
+        <div class="static-content">
+
+            <h2 class="static-subtitle">¿Por qué trabajar en CinePlus?</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <h3>Ambiente único</h3>
+                    <p>Trabaja rodeado de la cultura del cine y grandes estrenos.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Línea de carrera</h3>
+                    <p>Oportunidades reales de crecimiento dentro de la empresa.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h3>Buen equipo</h3>
+                    <p>Un clima laboral joven, dinámico y colaborativo.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-ticket"></i>
+                    <h3>Beneficios</h3>
+                    <p>Descuentos en entradas, dulcería y funciones especiales.</p>
+                </div>
+            </div>
+
+            <h2 class="static-subtitle">Vacantes disponibles</h2>
+            <div class="vacantes-lista">
+
+                <div class="vacante-card">
+                    <div class="vacante-info">
+                        <span>Atención al cliente</span>
+                        <h3>Anfitrión(a) de Sala</h3>
+                        <p>Sede Ate · Tiempo parcial</p>
+                    </div>
+                    <a href="mailto:trabajaconnosotros@cineplus.com?subject=Postulación - Anfitrión de Sala" class="btn-postular">Postular</a>
+                </div>
+
+                <div class="vacante-card">
+                    <div class="vacante-info">
+                        <span>Dulcería</span>
+                        <h3>Vendedor(a) de Dulcería</h3>
+                        <p>Sede Miraflores · Tiempo completo</p>
+                    </div>
+                    <a href="mailto:trabajaconnosotros@cineplus.com?subject=Postulación - Vendedor de Dulcería" class="btn-postular">Postular</a>
+                </div>
+
+                <div class="vacante-card">
+                    <div class="vacante-info">
+                        <span>Operaciones</span>
+                        <h3>Técnico(a) de Proyección</h3>
+                        <p>Sede Callao · Tiempo completo</p>
+                    </div>
+                    <a href="mailto:trabajaconnosotros@cineplus.com?subject=Postulación - Técnico de Proyección" class="btn-postular">Postular</a>
+                </div>
+
+                <div class="vacante-card">
+                    <div class="vacante-info">
+                        <span>Administración</span>
+                        <h3>Asistente Administrativo(a)</h3>
+                        <p>Oficina Central · Tiempo completo</p>
+                    </div>
+                    <a href="mailto:trabajaconnosotros@cineplus.com?subject=Postulación - Asistente Administrativo" class="btn-postular">Postular</a>
+                </div>
+
+            </div>
+
+            <div class="form-card">
+                <h2>¿No encontraste tu vacante ideal?</h2>
+                <form id="formTrabaja">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombreT">Nombre completo</label>
+                            <input type="text" id="nombreT" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correoT">Correo electrónico</label>
+                            <input type="email" id="correoT" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sedeT">Sede de interés</label>
+                            <select id="sedeT" required>
+                                <option value="">Selecciona una sede</option>
+                                <option value="ate">CinePlus Ate</option>
+                                <option value="miraflores">CinePlus Miraflores</option>
+                                <option value="callao">CinePlus Callao</option>
+                                <option value="surco">CinePlus Surco</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="puestoT">Área de interés</label>
+                            <input type="text" id="puestoT" placeholder="Ej: Sala, Dulcería, Administración">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensajeT">Cuéntanos sobre ti</label>
+                        <textarea id="mensajeT" placeholder="Experiencia, disponibilidad, etc." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar postulación</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+<footer class="footer_index">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <a href="trabaja-con-nosotros.html"><i class="fa-solid fa-earth-americas"></i>Trabaja con nosotros</a>
+            <a href="cines.html"><i class="fa-solid fa-location-dot"></i>Nuestras Sedes</a>
+            <a href="contacto.html"><i class="fa-solid fa-phone"></i>Contacto</a>
+            <a href="promociones.html"><i class="fa-solid fa-ticket"></i>Promociones</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Políticas</h4>
+            <a href="politica-privacidad.html"><i class="fa-solid fa-magnifying-glass"></i>Política de Privacidad</a>
+            <a href="terminos-condiciones.html"><i class="fa-solid fa-file-lines"></i>Términos y Condiciones</a>
+            <a href="cambios-devoluciones.html"><i class="fa-solid fa-right-left"></i>Cambios y Devoluciones</a>
+            <a href="libro-reclamaciones.html"><i class="fa-solid fa-book"></i>Libro de Reclamaciones</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://wa.me/51999999999" target="_blank"><i class="fab fa-whatsapp"></i>Whatsapp</a>
+            <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i>Tiktok</a>
+        </div>
+
+        <div class="footer-col footer-col-extra">
+            <a href="libro-reclamaciones.html" class="footer-libro">
+                <i class="fa-solid fa-book-open"></i>
+                <div>
+                    <strong>LIBRO DE RECLAMACIONES</strong>
+                    <span>Ley N° 29571, Código de Protección y Defensa al Consumidor</span>
+                </div>
+            </a>
+            <div class="footer-pagos">
+                <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                <span class="pago-badge">Yape</span>
+                <span class="pago-badge">Plin</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 CinePlus. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('formTrabaja').addEventListener('submit', function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: '¡Postulación enviada!',
+                text: 'Gracias por tu interés en CinePlus. Revisaremos tu perfil pronto.',
+                icon: 'success',
+                background: '#1a1a1a',
+                color: '#ffffff',
+                confirmButtonColor: '#722F37'
+            });
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
