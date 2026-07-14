@@ -2854,3 +2854,224 @@ html{
     background: #b20710;
     transform: scale(1.1);
 }
+
+
+/* ===== BOTÓN FLOTANTE DEL CARRITO ===== */
+.btn-carrito-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #722F37, #ff4d4d);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+    z-index: 998;
+    transition: 0.3s ease;
+}
+
+.btn-carrito-flotante:hover {
+    transform: scale(1.08);
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #fff;
+    color: #722F37;
+    font-size: 13px;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== OVERLAY ===== */
+.carrito-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.carrito-overlay.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== PANEL LATERAL DEL CARRITO ===== */
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 360px;
+    max-width: 90vw;
+    height: 100%;
+    background: #1a1a1a;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carrito-panel.abierto {
+    right: 0;
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.carrito-cerrar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.carrito-lista {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+}
+
+.carrito-vacio {
+    color: #aaa;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.carrito-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.carrito-item-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.carrito-item-info strong {
+    font-size: 14px;
+}
+
+.carrito-item-info span {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carrito-item-cantidad button {
+    background: #722F37;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.carrito-item-cantidad button:hover {
+    background: #ff4d4d;
+}
+
+.carrito-item-subtotal {
+    font-weight: bold;
+    color: #ff4d4d;
+    font-size: 13px;
+}
+
+.carrito-item-eliminar {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.carrito-item-eliminar:hover {
+    color: #ff4d4d;
+}
+
+.carrito-footer {
+    padding: 18px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.btn-vaciar,
+.btn-finalizar {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease;
+}
+
+.btn-vaciar {
+    background: transparent;
+    border: 1px solid #722F37;
+    color: #fff;
+}
+
+.btn-vaciar:hover {
+    background: #722F37;
+}
+
+.btn-finalizar {
+    background: linear-gradient(90deg, #722F37, #ff4d4d);
+    color: white;
+}
+
+.btn-finalizar:hover {
+    background: white;
+    color: #722F37;
+}

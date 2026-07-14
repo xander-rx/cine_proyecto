@@ -158,12 +158,41 @@
         </section>
     </main>
 
+   <!-- BOTÓN FLOTANTE DEL CARRITO -->
+    <button id="btnCarrito" class="btn-carrito-flotante">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="carritoContador" class="carrito-contador">0</span>
+    </button>
+
     <!-- NOTIFICACIÓN -->
     <div id="toast-notification" class="toast-notification">
         <div class="toast-icon">🍿</div>
         <div class="toast-message">
             <strong>¡Agregado al carrito!</strong>
             <span id="toast-producto"></span>
+        </div>
+    </div>
+
+   <!-- OVERLAY Y PANEL DEL CARRITO -->
+    <div id="carritoOverlay" class="carrito-overlay"></div>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="carrito-cerrar">&times;</button>
+        </div>
+
+        <div id="carritoLista" class="carrito-lista">
+            <p id="carritoVacio" class="carrito-vacio">Tu carrito está vacío.</p>
+        </div>
+
+        <div class="carrito-footer">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span id="carritoTotal">S/ 0.00</span>
+            </div>
+            <button class="btn-vaciar">Vaciar carrito</button>
+            <button class="btn-finalizar">Finalizar compra</button>
         </div>
     </div>
 
@@ -217,9 +246,11 @@
     </div>
 </footer>
 
-    <!-- SCRIPT PARA FILTROS Y NOTIFICACIÓN -->
+    <!-- SCRIPT PARA FILTROS, NOTIFICACIÓN Y CARRITO -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // Filtros por categoría
+    (function () {
+        // ===== FILTROS POR CATEGORÍA =====
         const buttons = document.querySelectorAll('.menu-btn');
         const cards = document.querySelectorAll('.dulceria-card');
 
@@ -229,36 +260,192 @@
                 btn.classList.add('active');
                 const categoria = btn.getAttribute('data-seccion');
                 cards.forEach(card => {
-                    if (categoria === card.getAttribute('data-categoria')) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (categoria === card.getAttribute('data-categoria')) ? 'flex' : 'none';
                 });
             });
         });
 
-        // NOTIFICACIÓN TOAST 
+        // ===== NOTIFICACIÓN TOAST =====
         const toast = document.getElementById('toast-notification');
         const toastProducto = document.getElementById('toast-producto');
 
-        function showToast(productoNombre, productoPrecio) {
-            toastProducto.innerHTML = `${productoNombre} - S/ ${productoPrecio}`;
+        function showToast(nombre, precio) {
+            toastProducto.innerHTML = `${nombre} - S/ ${precio}`;
             toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
+            setTimeout(() => toast.classList.remove('show'), 2500);
         }
 
-        // Agregar evento a todos los botones de carrito
+        // ===== CARRITO =====
+        let carrito = JSON.parse(localStorage.getItem('carritoDulceria')) || [];
+
+        function guardarCarrito() {
+            localStorage.setItem('carritoDulceria', JSON.stringify(carrito));
+        }
+
+        function actualizarCarritoUI() {
+            const lista = document.getElementById('carritoLista');
+            const contador = document.getElementById('carritoContador');
+            const totalEl = document.getElementById('carritoTotal');
+
+            lista.innerHTML = '';
+
+            if (carrito.length === 0) {
+                lista.innerHTML = '<p id="carritoVacio" class="carrito-vacio">Tu carrito está vacío.</p>';
+            } else {
+                carrito.forEach(item => {
+                    const subtotal = (item.precio * item.cantidad).toFixed(2);
+                    const fila = document.createElement('div');
+                    fila.className = 'carrito-item';
+                    fila.innerHTML = `
+                        <div class="carrito-item-info">
+                            <strong>${item.nombre}</strong>
+                            <span>S/ ${item.precio.toFixed(2)} c/u</span>
+                        </div>
+                        <div class="carrito-item-cantidad">
+                            <button class="btn-restar" data-nombre="${item.nombre}">-</button>
+                            <span>${item.cantidad}</span>
+                            <button class="btn-sumar" data-nombre="${item.nombre}">+</button>
+                        </div>
+                        <div class="carrito-item-subtotal">S/ ${subtotal}</div>
+                        <button class="carrito-item-eliminar" data-nombre="${item.nombre}">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    `;
+                    lista.appendChild(fila);
+                });
+            }
+
+            const totalItems = carrito.reduce((sum, i) => sum + i.cantidad, 0);
+            const totalPrecio = carrito.reduce((sum, i) => sum + (i.precio * i.cantidad), 0);
+
+            contador.textContent = totalItems;
+            contador.style.display = totalItems > 0 ? 'flex' : 'none';
+            totalEl.textContent = `S/ ${totalPrecio.toFixed(2)}`;
+        }
+
+        function agregarAlCarrito(nombre, precio) {
+            const existente = carrito.find(i => i.nombre === nombre);
+            if (existente) {
+                existente.cantidad++;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            guardarCarrito();
+            actualizarCarritoUI();
+        }
+
+        function cambiarCantidad(nombre, delta) {
+            const item = carrito.find(i => i.nombre === nombre);
+            if (!item) return;
+            item.cantidad += delta;
+            if (item.cantidad <= 0) {
+                carrito = carrito.filter(i => i.nombre !== nombre);
+            }
+            guardarCarrito();
+            actualizarCarritoUI();
+        }
+
+        function eliminarDelCarrito(nombre) {
+            carrito = carrito.filter(i => i.nombre !== nombre);
+            guardarCarrito();
+            actualizarCarritoUI();
+        }
+
+        function vaciarCarrito() {
+            if (carrito.length === 0) return;
+            Swal.fire({
+                title: '¿Vaciar carrito?',
+                text: 'Se eliminarán todos los productos agregados.',
+                icon: 'warning',
+                showCancelButton: true,
+                background: '#1a1a1a',
+                color: '#ffffff',
+                confirmButtonColor: '#c62828',
+                cancelButtonColor: '#555',
+                confirmButtonText: 'Sí, vaciar',
+                cancelButtonText: 'Cancelar'
+            }).then(result => {
+                if (result.isConfirmed) {
+                    carrito = [];
+                    guardarCarrito();
+                    actualizarCarritoUI();
+                }
+            });
+        }
+
+        function finalizarCompra() {
+            if (carrito.length === 0) {
+                Swal.fire({
+                    title: 'Carrito vacío',
+                    text: 'Agrega algún producto antes de finalizar la compra.',
+                    icon: 'info',
+                    background: '#1a1a1a',
+                    color: '#ffffff',
+                    confirmButtonColor: '#c62828'
+                });
+                return;
+            }
+
+            const totalPrecio = carrito.reduce((sum, i) => sum + (i.precio * i.cantidad), 0);
+
+            Swal.fire({
+                title: '¡Compra confirmada!',
+                text: `Total pagado: S/ ${totalPrecio.toFixed(2)}. ¡Disfruta tu película!`,
+                icon: 'success',
+                background: '#1a1a1a',
+                color: '#ffffff',
+                confirmButtonColor: '#c62828',
+                confirmButtonText: 'Genial'
+            }).then(() => {
+                carrito = [];
+                guardarCarrito();
+                actualizarCarritoUI();
+                cerrarCarrito();
+            });
+        }
+
+        function abrirCarrito() {
+            document.getElementById('carritoPanel').classList.add('abierto');
+            document.getElementById('carritoOverlay').classList.add('activo');
+        }
+
+        function cerrarCarrito() {
+            document.getElementById('carritoPanel').classList.remove('abierto');
+            document.getElementById('carritoOverlay').classList.remove('activo');
+        }
+
+        // Botones fijos del panel (no cambian, se enlazan una sola vez)
+        document.getElementById('btnCarrito').addEventListener('click', abrirCarrito);
+        document.getElementById('carritoOverlay').addEventListener('click', cerrarCarrito);
+        document.querySelector('.carrito-cerrar').addEventListener('click', cerrarCarrito);
+        document.querySelector('.btn-vaciar').addEventListener('click', vaciarCarrito);
+        document.querySelector('.btn-finalizar').addEventListener('click', finalizarCompra);
+
+        // ===== DELEGACIÓN DE EVENTOS =====
+        // Botones "Agregar al carrito" (uno por producto en el catálogo)
         document.querySelectorAll('.btn-dulceria').forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', () => {
                 const nombre = btn.getAttribute('data-nombre');
-                const precio = btn.getAttribute('data-precio');
-                showToast(nombre, precio);
+                const precio = parseFloat(btn.getAttribute('data-precio'));
+                showToast(nombre, precio.toFixed(2));
+                agregarAlCarrito(nombre, precio);
             });
         });
+
+        // Botones +/- y eliminar DENTRO del carrito (se regeneran cada vez, por eso usamos delegación)
+        document.getElementById('carritoLista').addEventListener('click', (e) => {
+            const sumar = e.target.closest('.btn-sumar');
+            const restar = e.target.closest('.btn-restar');
+            const eliminar = e.target.closest('.carrito-item-eliminar');
+
+            if (sumar) cambiarCantidad(sumar.dataset.nombre, 1);
+            if (restar) cambiarCantidad(restar.dataset.nombre, -1);
+            if (eliminar) eliminarDelCarrito(eliminar.dataset.nombre);
+        });
+
+        // Cargar carrito guardado al abrir la página
+        actualizarCarritoUI();
+    })();
     </script>
 </body>
 
