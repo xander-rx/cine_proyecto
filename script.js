@@ -148,4 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
     aplicarCineGuardado();
 });
 
+function irASedeCartelera(sede) {
+    localStorage.setItem('cineSeleccionado', sede);
+    window.location.href = 'peliculas.html';
+}
+
 
